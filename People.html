@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoodChanger for People</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="athletes.css">
+<style>
+  /* anchor offset so the section title clears the fixed header on deep-link */
+  #excellence{scroll-margin-top:64px}
+</style>
+</head>
+<body id="top">
+
+<div class="progress" aria-hidden="true"></div>
+
+<!-- ============================================================ HEADER -->
+<header class="site-header" data-header>
+  <div class="header-row">
+    <a class="brand" href="Home.html" aria-label="MoodChanger home">
+      <img class="mark" src="assets/flomadlogo.svg" alt="">
+      <span class="word">Mood<span class="a">Changer</span>.ai</span>
+    </a>
+
+    <button class="burger" data-nav-toggle aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+
+    <nav class="nav" data-nav aria-label="Primary">
+      <div class="item">
+        <a class="caipo-pill" href="https://www.caipo.ai/" target="_blank" rel="noopener">CAIPO</a>
+      </div>
+
+      <div class="item has-menu">
+        <a class="trigger" href="Wearables.html">Wearables
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu scroll">
+          <a href="Wearables.html#smart-glasses">SmartGlasses</a>
+          <a href="Wearables.html#eeg-hardware">EEG Hardware</a>
+          <a href="Wearables.html#smart-ring">Smart Ring</a>
+          <a href="Wearables.html#brain-monitor">Brain Monitor</a>
+          <a href="Wearables.html#smart-foot-pods">Smart Foot Pods</a>
+          <a href="Wearables.html#smart-insoles">Smart Insoles</a>
+          <a href="Wearables.html#smart-watch">Smart Watch</a>
+          <a href="Wearables.html#exoskeleton">Exoskeleton</a>
+          <a href="Wearables.html#smart-gloves">Smart Gloves</a>
+          <a href="Wearables.html#smart-shirt">Smart Shirt</a>
+          <a href="Wearables.html#smart-suit">Smart Suit</a>
+          <a href="Wearables.html#smart-posture-trainer">Smart Posture Trainer</a>
+        </div>
+      </div>
+
+      <div class="item has-menu">
+        <button class="trigger" type="button">Smart Devices
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="menu">
+          <a href="#">AI Health Insights</a>
+          <a href="#">Smart Scale</a>
+          <a href="#">Smart Bottle</a>
+          <a href="#">Smart Robots</a>
+        </div>
+      </div>
+
+      <div class="item has-menu active">
+        <a class="trigger" href="People.html">People
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu">
+          <a href="People.html#allergies">Allergies</a>
+          <a href="People.html#stuttering">Stuttering</a>
+          <a href="People.html#cognitive">Cognitive Loss</a>
+        </div>
+      </div>
+
+      <div class="item"><a href="Athletes.html">Athletes</a></div>
+      <div class="item"><a href="Pets.html">Pets</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================ HERO -->
+  <section class="hero">
+    <div class="hero-media" data-parallax="0.16">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/feature-2.jpg">
+        <source src="assets/people-hero.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-inner">
+      <h1 class="reveal" data-delay="80">MoodChanger for <span class="accent">People</span></h1>
+      <p class="lede reveal" data-delay="200">Your daily wellbeing is unique to you. MoodChanger uses AI to understand your patterns, support your health conditions, and help you build a better quality of life — one insight at a time.</p>
+    </div>
+
+    <div class="scrollcue"><span>Scroll</span><span class="track"></span></div>
+  </section>
+
+  <!-- ============================================================ STATEMENT -->
+  <section class="band paper" id="performance">
+    <div class="wrap">
+      <div class="statement">
+        <div class="section-head">
+          <h2 class="reveal" data-delay="60">AI-Powered Personal Wellbeing</h2>
+        </div>
+
+        <div class="statement-body">
+          <p class="lead-line reveal" data-delay="80"><a class="caipo caipo-link" href="https://www.caipo.ai/" target="_blank" rel="noopener">CAIPO</a> continuously learns from your body signals, habits, and environment to deliver <span class="mk">personalized AI-driven health insights</span> that fit your real daily life — not a one-size-fits-all plan.</p>
+          <div class="signal reveal" data-delay="160">
+            <span class="pulse"></span>
+            <span>Real-time biometrics + behavioral patterns <span class="ar">&#8594;</span> smarter daily decisions and better long-term health outcomes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CONDITIONS -->
+  <section class="band dark" id="excellence">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2 class="reveal" data-delay="60">Tailored Support for Every Condition</h2>
+        <p class="sub reveal" data-delay="120">MoodChanger brings personalized AI support to people managing chronic and everyday health challenges, putting clarity and control back in your hands.</p>
+      </div>
+
+      <div class="feature-carousel reveal" data-delay="120">
+        <div class="feature-track">
+
+        <!-- 01 Allergies -->
+        <article class="feature reveal" id="allergies">
+          <div class="media">
+            <div class="zoom"><img src="assets/people-allergies.jpg" alt="Child managing seasonal allergies" loading="lazy"></div>
+            <div class="vig"></div>
+            <span class="idx">01</span>
+            <span class="tag"><span class="dot"></span>Allergy management</span>
+          </div>
+          <div class="copy">
+            <span class="fnum">01</span>
+            <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Allergies</h3>
+            <p class="desc">MoodChanger tracks environmental triggers, symptoms, and your body's reactions in real time — helping you predict, avoid, and manage allergy flare-ups before they disrupt your day.</p>
+            <ul class="points">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Environmental trigger detection & alerts</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Symptom pattern recognition over time</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalized avoidance recommendations</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 02 Stuttering -->
+        <article class="feature reveal" id="stuttering">
+          <div class="media">
+            <div class="zoom"><img src="assets/people-stuttering.jpg" alt="Speech therapy session" loading="lazy"></div>
+            <div class="vig"></div>
+            <span class="idx">02</span>
+            <span class="tag"><span class="dot"></span>Speech support</span>
+          </div>
+          <div class="copy">
+            <span class="fnum">02</span>
+            <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Stuttering</h3>
+            <p class="desc">Using biofeedback and stress monitoring, MoodChanger helps individuals who stutter identify emotional and physiological triggers, track progress, and build confidence through guided techniques.</p>
+            <ul class="points">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Stress & anxiety trigger identification</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Breathing & relaxation technique guidance</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Speech confidence progress tracking</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 03 Cognitive Loss -->
+        <article class="feature reveal" id="cognitive">
+          <div class="media">
+            <div class="zoom"><img src="assets/people-cognitive.jpg" alt="Senior doing a cognitive exercise" loading="lazy"></div>
+            <div class="vig"></div>
+            <span class="idx">03</span>
+            <span class="tag"><span class="dot"></span>Cognitive health</span>
+          </div>
+          <div class="copy">
+            <span class="fnum">03</span>
+            <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Cognitive Loss</h3>
+            <p class="desc">MoodChanger monitors cognitive patterns, sleep quality, and daily engagement to detect early signs of decline, support caregivers, and help individuals maintain independence and mental sharpness longer.</p>
+            <ul class="points">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Early cognitive decline pattern detection</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Sleep quality & brain health correlation</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Caregiver insights & daily activity monitoring</li>
+            </ul>
+          </div>
+        </article>
+
+        </div><!-- /feature-track -->
+
+        <div class="carousel-nav">
+          <button class="cbtn prev" type="button" data-carousel-prev aria-label="Previous condition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-dots" role="tablist">
+            <button class="on" type="button" aria-label="Allergies"></button>
+            <button type="button" aria-label="Stuttering"></button>
+            <button type="button" aria-label="Cognitive Loss"></button>
+          </div>
+          <button class="cbtn next" type="button" data-carousel-next aria-label="Next condition">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div><!-- /feature-carousel -->
+    </div>
+  </section>
+
+  <!-- ============================================================ TRACKING -->
+  <section class="band paper-2">
+    <div class="wrap">
+      <div class="track-grid">
+        <div class="track-aside">
+          <h2 class="reveal" data-delay="60" style="font-size:clamp(1.9rem,3.6vw,3rem);font-weight:500;letter-spacing:-.03em">Your Personal Health Journey</h2>
+          <p class="reveal" data-delay="120" style="margin-top:22px;color:var(--muted-l);font-size:1.12rem;line-height:1.6">MoodChanger turns daily check-ins into a clear picture of your health — helping you make better decisions every single day.</p>
+          <div class="meter reveal" data-delay="180"><span></span><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div><h4>Daily health check-in</h4><p>Log your mood, energy, symptoms, and sleep every day. The more consistent you are, the smarter MoodChanger gets.</p></div></div>
+          <div class="step"><div class="n">2</div><div><h4>Pattern recognition</h4><p>AI identifies patterns between your habits, environment, and symptoms — revealing what helps and what hurts.</p></div></div>
+          <div class="step"><div class="n">3</div><div><h4>Personalized insights</h4><p>Receive clear, actionable insights based on your own data — not generic advice, but guidance tailored to your unique biology.</p></div></div>
+          <div class="step"><div class="n">4</div><div><h4>Continuous improvement</h4><p>Track your progress over weeks and months, celebrate wins, and refine your routine based on what works for your body and mind.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CLOSING -->
+  <section class="closing">
+    <div class="closing-media" data-parallax="0.1">
+      <video class="closing-video" autoplay muted loop playsinline preload="auto" poster="assets/people-allergies.jpg">
+        <source src="assets/people-closing.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="inner">
+      <span class="closing-rule reveal" data-rev="fade" aria-hidden="true"></span>
+      <h3 class="reveal" data-delay="60">Every Person, <span class="accent">Every Need</span></h3>
+      <p class="reveal" data-delay="140">From managing chronic conditions to optimizing everyday wellbeing, MoodChanger supports people of all ages and health backgrounds.</p>
+      <p class="privacy reveal" data-delay="200"><span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4" stroke-linecap="round"/></svg></span>Your data stays private and is only shared with your permission.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="brand" href="Home.html"><img class="mark" src="assets/flomadlogo.svg" alt="" style="width:34px;height:34px"><span class="word">Mood<span class="a">Changer</span>.ai</span></a>
+    <p>A <a class="lk" href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener">Flo Labs</a> product</p>
+    <p>Powered by <a href="https://caipo.ai" target="_blank" rel="noopener" class="caipo">CAIPO</a></p>
+    <p class="fine"><span class="caipo">CAIPO</span> is the intelligent layer that helps MoodChanger understand patterns in your daily life.</p>
+  </div>
+</footer>
+
+<a class="backhome" href="Home.html" aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+
+<script src="athletes.js"></script>
+<script>
+(function(){
+  var IDS=['allergies','stuttering','cognitive'];
+  function gotoCondition(id, smooth){
+    var idx=IDS.indexOf(id);
+    if(idx<0) return;
+    var dots=document.querySelectorAll('.carousel-dots button');
+    if(dots[idx]) dots[idx].click();           // drives the existing carousel
+    var sec=document.getElementById('excellence');
+    if(sec) window.scrollTo({top:Math.max(0, sec.offsetTop-56), behavior: smooth?'smooth':'auto'});
+  }
+  // deep-link on load (e.g. arriving from another page's People menu)
+  function fromHash(smooth){
+    var id=(location.hash||'').replace('#','');
+    if(IDS.indexOf(id)!==-1){ gotoCondition(id, smooth); return true; }
+    return false;
+  }
+  window.addEventListener('load', function(){ setTimeout(function(){ fromHash(false); }, 250); });
+  // same-page clicks on the People menu
+  document.addEventListener('click', function(e){
+    var a=e.target.closest('a[href]'); if(!a) return;
+    var href=a.getAttribute('href');
+    var m=href && href.match(/#(allergies|stuttering|cognitive)$/);
+    if(m && (href.charAt(0)==='#' || href.indexOf('People.html')===0)){
+      e.preventDefault();
+      if(history.replaceState) history.replaceState(null,'','#'+m[1]);
+      gotoCondition(m[1], true);
+      document.body.classList.remove('nav-open');
+    }
+  });
+})();
+</script>
+</body>
+</html>

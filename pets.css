@@ -1,0 +1,382 @@
+/* ============================================================
+   MoodChanger · Pets — cinematic redesign
+   Shares tokens / header / footer / reveals / steps / closing
+   with athletes.css (loaded first). This file styles the
+   pets-specific sections: hero, presentation embed, and the
+   ecosystem / vision / world / family / device card systems.
+   White-forward editorial rhythm with MoodChanger yellow.
+   ============================================================ */
+
+/* ============================================================
+   HERO — reuse Athletes .hero treatment with a gradient media
+   ============================================================ */
+.hero.pets .hero-media{
+  background:
+    radial-gradient(58% 50% at 76% 16%, rgba(253,224,53,.16), transparent 64%),
+    radial-gradient(74% 66% at 12% 88%, rgba(157,82,235,.13), transparent 62%),
+    linear-gradient(180deg, var(--ink-brand) 0%, var(--ink) 72%)}
+.hero.pets .hero-media .grid-bg{position:absolute; inset:0; opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(120% 100% at 72% 12%, #000, transparent 76%);
+          mask-image:radial-gradient(120% 100% at 72% 12%, #000, transparent 76%)}
+.hero .kicker{margin-top:clamp(16px,2.4vh,26px); font-size:clamp(1.15rem,2.2vw,1.7rem); font-weight:700;
+  letter-spacing:-.01em; color:var(--yellow); text-shadow:0 2px 26px rgba(253,224,53,.2)}
+
+/* feature-carousel glyph media (no pet photos) — bigger centered icon */
+.feature .media .glyph svg{width:104px; height:104px}
+
+/* closing (privacy) — gradient instead of video */
+.closing.pets .closing-media{
+  background:radial-gradient(70% 80% at 50% 28%, rgba(253,224,53,.1), transparent 60%),
+             linear-gradient(180deg, var(--ink-brand), var(--ink))}
+.closing.pets .lock{display:inline-grid; place-items:center; width:54px; height:54px; border-radius:15px; margin-bottom:24px;
+  background:rgba(253,224,53,.16); border:1px solid rgba(253,224,53,.42); color:var(--yellow)}
+.closing.pets .lock svg{width:24px; height:24px}
+
+/* ============================================================
+   HERO (legacy pets-hero — kept for fallback, unused)
+   ============================================================ */
+.pets-hero{position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden;
+  background:var(--ink); color:#fff; padding:clamp(140px,18vh,210px) 0 clamp(80px,12vh,140px)}
+.pets-hero .glow{position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(58% 50% at 76% 16%, rgba(253,224,53,.16), transparent 64%),
+    radial-gradient(74% 66% at 12% 88%, rgba(157,82,235,.13), transparent 62%),
+    linear-gradient(180deg, var(--ink-brand) 0%, var(--ink) 70%)}
+.pets-hero .grid-bg{position:absolute; inset:0; z-index:0; opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(120% 100% at 72% 12%, #000, transparent 76%);
+          mask-image:radial-gradient(120% 100% at 72% 12%, #000, transparent 76%)}
+.pets-hero .inner{position:relative; z-index:2; width:min(var(--maxw),90vw); margin-inline:auto; text-align:center}
+.pets-hero h1{font-size:clamp(3rem,8.4vw,7rem); font-weight:600; letter-spacing:-.04em; line-height:.96; text-wrap:balance;
+  text-shadow:0 2px 34px rgba(5,16,22,.5)}
+.pets-hero .kicker{margin-top:clamp(20px,3vh,30px); font-size:clamp(1.2rem,2.4vw,1.9rem); font-weight:700;
+  letter-spacing:-.01em; color:var(--yellow); text-shadow:0 2px 30px rgba(253,224,53,.2)}
+.pets-hero .lede{margin-top:clamp(20px,3vh,30px); max-width:64ch; margin-inline:auto;
+  font-size:clamp(1.1rem,1.6vw,1.42rem); line-height:1.6; color:rgba(255,255,255,.9)}
+.pets-hero .cue{margin-top:clamp(40px,6vh,68px); display:inline-flex; flex-direction:column; align-items:center; gap:12px}
+.pets-hero .cue .txt{font-size:.7rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.55)}
+.pets-hero .cue .ln{width:1px; height:46px; background:rgba(255,255,255,.28); position:relative; overflow:hidden}
+.pets-hero .cue .ln::after{content:""; position:absolute; left:0; top:-55%; width:100%; height:55%; background:var(--yellow); animation:petsCue 2s var(--ease) infinite}
+@keyframes petsCue{0%{top:-55%}100%{top:110%}}
+@media (prefers-reduced-motion:reduce){.pets-hero .cue .ln::after{animation:none}}
+
+/* ============================================================
+   PRESENTATION EMBED
+   ============================================================ */
+.embed-wrap{width:min(var(--maxw),92vw); margin-inline:auto}
+.embed-frame{position:relative; border-radius:24px; overflow:hidden; border:1px solid var(--line-l);
+  background:#0d2430; box-shadow:0 50px 100px -56px rgba(13,36,48,.5)}
+.embed-ratio{position:relative; width:100%; padding-top:56.25%}
+.embed-ratio iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.embed-bar{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 20px;
+  background:var(--ink); color:#fff}
+.embed-bar .live{display:inline-flex; align-items:center; gap:10px; font-size:.88rem; font-weight:500; color:rgba(255,255,255,.92)}
+.embed-bar .live .dot{width:8px; height:8px; border-radius:50%; background:var(--yellow); animation:livePulse 1.8s var(--ease) infinite}
+@keyframes livePulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.embed-bar .live .dot{animation:none}}
+.embed-bar .open{display:inline-flex; align-items:center; gap:9px; font-size:.88rem; font-weight:600; color:var(--ink);
+  background:var(--yellow); padding:10px 18px; border-radius:999px; transition:transform .3s var(--ease), box-shadow .3s var(--ease)}
+.embed-bar .open:hover{transform:translateY(-2px); box-shadow:0 16px 30px -14px rgba(253,224,53,.7)}
+.embed-bar .open svg{width:14px; height:14px}
+
+/* ============================================================
+   SHARED CARD ICON (yellow circle)
+   ============================================================ */
+.ic-circle{width:58px; height:58px; border-radius:50%; display:grid; place-items:center; flex:none;
+  background:rgba(253,224,53,.18); border:1px solid rgba(253,224,53,.34); color:var(--yellow-deep)}
+.ic-circle svg{width:27px; height:27px}
+.band.dark .ic-circle{background:rgba(253,224,53,.16); border-color:rgba(253,224,53,.3); color:var(--yellow)}
+
+/* ============================================================
+   UNIFIED ECOSYSTEM — 4-up
+   ============================================================ */
+.eco-grid{margin-top:clamp(46px,6vw,72px); display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(16px,1.8vw,24px)}
+.eco-card{background:#fff; border:1px solid var(--line-l); border-radius:20px; padding:clamp(26px,2.4vw,34px);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s}
+.band.dark .eco-card{background:rgba(255,255,255,.045); border-color:var(--line-d)}
+.eco-card:hover{transform:translateY(-6px); box-shadow:0 34px 60px -38px rgba(13,36,48,.3); border-color:#d4dad3}
+.band.dark .eco-card:hover{border-color:rgba(255,255,255,.22); box-shadow:0 34px 60px -34px rgba(0,0,0,.55)}
+.eco-card .ic-circle{margin-bottom:22px}
+.eco-card h3{font-size:clamp(1.18rem,1.6vw,1.36rem); font-weight:700; letter-spacing:-.018em; color:var(--ink)}
+.band.dark .eco-card h3{color:#fff}
+.eco-card p{margin-top:12px; font-size:1rem; line-height:1.58; color:var(--muted-l)}
+.band.dark .eco-card p{color:var(--muted-d)}
+
+/* ============================================================
+   OUR VISION — 2x2 bullets
+   ============================================================ */
+.vision-grid{margin-top:clamp(40px,5vw,64px); display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,2.4vw,32px);
+  max-width:1000px; margin-inline:auto}
+.vision-item{display:flex; gap:18px; align-items:flex-start; padding:clamp(22px,2.2vw,30px);
+  background:#fff; border:1px solid var(--line-l); border-radius:18px; transition:transform .4s var(--ease), box-shadow .4s var(--ease)}
+.band.dark .vision-item{background:rgba(255,255,255,.045); border-color:var(--line-d)}
+.vision-item:hover{transform:translateY(-4px); box-shadow:0 28px 52px -38px rgba(13,36,48,.28)}
+.vision-item .dot{flex:none; width:14px; height:14px; border-radius:50%; background:var(--yellow); margin-top:7px;
+  box-shadow:0 0 0 5px rgba(253,224,53,.16)}
+.vision-item h3{font-size:clamp(1.1rem,1.5vw,1.28rem); font-weight:700; letter-spacing:-.015em; color:var(--ink)}
+.band.dark .vision-item h3{color:#fff}
+.vision-item p{margin-top:9px; font-size:1.02rem; line-height:1.55; color:var(--muted-l)}
+.band.dark .vision-item p{color:var(--muted-d)}
+
+/* ============================================================
+   PET'S WORLD — 2x2 feature cards with bullet lists
+   ============================================================ */
+.world-grid{margin-top:clamp(40px,5vw,64px); display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2vw,26px)}
+.world-card{position:relative; overflow:hidden; background:#fff; border:1px solid var(--line-l); border-radius:22px;
+  padding:clamp(28px,2.8vw,40px); transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s}
+.band.dark .world-card{background:rgba(255,255,255,.045); border-color:var(--line-d)}
+.world-card::after{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--yellow);
+  transform:scaleY(0); transform-origin:top; transition:transform .5s var(--ease)}
+.world-card:hover{transform:translateY(-5px); box-shadow:0 36px 64px -40px rgba(13,36,48,.3); border-color:#d4dad3}
+.world-card:hover::after{transform:scaleY(1)}
+.world-card .ic-circle{margin-bottom:22px}
+.world-card h4{font-size:clamp(1.3rem,1.9vw,1.6rem); font-weight:700; letter-spacing:-.02em; color:var(--ink)}
+.band.dark .world-card h4{color:#fff}
+.world-card .desc{margin-top:14px; font-size:1.04rem; line-height:1.62; color:var(--muted-l)}
+.band.dark .world-card .desc{color:var(--muted-d)}
+.world-card .tags{margin-top:24px; padding-top:22px; border-top:1px solid var(--line-l); display:flex; flex-direction:column; gap:13px}
+.band.dark .world-card .tags{border-color:var(--line-d)}
+.world-card .tags li{display:flex; align-items:center; gap:12px; font-size:.98rem; font-weight:500; color:#3a4b53}
+.band.dark .world-card .tags li{color:var(--muted-d)}
+.world-card .tags li .tk{flex:none; width:8px; height:8px; border-radius:50%; background:var(--yellow)}
+
+/* ============================================================
+   FAMILY MEMBERS — 3-up centered
+   ============================================================ */
+.family-card{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,3vw,48px); margin-top:clamp(40px,5vw,60px);
+  max-width:1000px; margin-inline:auto; padding:clamp(36px,4vw,56px); background:#fff;
+  border:1px solid var(--line-l); border-radius:24px; box-shadow:0 40px 80px -56px rgba(13,36,48,.3)}
+.band.dark .family-card{background:rgba(255,255,255,.045); border-color:var(--line-d)}
+.family-col{text-align:center; display:flex; flex-direction:column; align-items:center}
+.family-col .ic-circle{width:70px; height:70px; margin-bottom:20px}
+.family-col .ic-circle svg{width:34px; height:34px}
+.family-col h4{font-size:clamp(1.2rem,1.7vw,1.4rem); font-weight:700; letter-spacing:-.018em; color:var(--ink)}
+.band.dark .family-col h4{color:#fff}
+.family-col p{margin-top:10px; font-size:1rem; line-height:1.55; color:var(--muted-l); max-width:24ch}
+.band.dark .family-col p{color:var(--muted-d)}
+
+/* ============================================================
+   SMART DEVICES — 3-up (dark section)
+   ============================================================ */
+.dev-grid{margin-top:clamp(44px,5.5vw,72px); display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2vw,26px)}
+.dev-card{position:relative; overflow:hidden; background:rgba(255,255,255,.045); border:1px solid var(--line-d);
+  border-radius:22px; padding:clamp(28px,2.6vw,38px); transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s}
+.dev-card::before{content:""; position:absolute; inset:0; z-index:0; opacity:0;
+  background:radial-gradient(120% 120% at 0% 0%, rgba(253,224,53,.1), transparent 58%); transition:opacity .5s var(--ease)}
+.dev-card:hover{transform:translateY(-6px); border-color:rgba(253,224,53,.32); box-shadow:0 40px 70px -42px rgba(0,0,0,.6)}
+.dev-card:hover::before{opacity:1}
+.dev-card > *{position:relative; z-index:1}
+.dev-card .ic-circle{margin-bottom:22px}
+.dev-card h4{font-size:clamp(1.24rem,1.7vw,1.5rem); font-weight:700; letter-spacing:-.02em; color:#fff}
+.dev-card .desc{margin-top:13px; font-size:1.02rem; line-height:1.6; color:var(--muted-d)}
+.dev-card .tags{margin-top:22px; padding-top:20px; border-top:1px solid var(--line-d); display:flex; flex-direction:column; gap:12px}
+.dev-card .tags li{display:flex; align-items:center; gap:12px; font-size:.96rem; font-weight:500; color:var(--muted-d)}
+.dev-card .tags li .tk{flex:none; width:7px; height:7px; border-radius:50%; background:var(--yellow)}
+
+/* ============================================================
+   DAILY OBSERVATIONS — reuse .steps, constrain width
+   ============================================================ */
+.obs-wrap{max-width:880px; margin-inline:auto; margin-top:clamp(40px,5vw,60px)}
+.obs-wrap .steps .step{grid-template-columns:auto 1fr; align-items:flex-start}
+.obs-wrap .step .badge{width:clamp(46px,4vw,58px); height:clamp(46px,4vw,58px); border-radius:50%; flex:none;
+  display:grid; place-items:center; background:var(--yellow); color:var(--ink); font-size:1.3rem; font-weight:700}
+.obs-wrap .step h4{font-size:clamp(1.3rem,2vw,1.7rem); font-weight:700; letter-spacing:-.02em}
+.obs-wrap .step p{margin-top:10px; color:var(--muted-l); font-size:1.06rem; line-height:1.62; max-width:60ch}
+.band.dark .obs-wrap .step p{color:var(--muted-d)}
+
+/* ============================================================
+   PRIVACY CLOSING — reuse .closing visual language (no media)
+   ============================================================ */
+.privacy-closing{position:relative; overflow:hidden; background:var(--ink); color:#fff;
+  padding:clamp(90px,12vw,160px) 0}
+.privacy-closing .glow{position:absolute; inset:0; z-index:0;
+  background:radial-gradient(70% 80% at 50% 30%, rgba(253,224,53,.1), transparent 60%),
+             linear-gradient(180deg, var(--ink-brand), var(--ink))}
+.privacy-closing .inner{position:relative; z-index:2; width:min(760px,90vw); margin-inline:auto; text-align:center}
+.privacy-closing .lock{display:inline-grid; place-items:center; width:54px; height:54px; border-radius:15px; margin-bottom:26px;
+  background:rgba(253,224,53,.16); border:1px solid rgba(253,224,53,.42); color:var(--yellow)}
+.privacy-closing .lock svg{width:24px; height:24px}
+.privacy-closing h3{font-size:clamp(1.9rem,4.4vw,3.2rem); font-weight:600; letter-spacing:-.03em; text-wrap:balance}
+.privacy-closing p{margin-top:22px; font-size:clamp(1.06rem,1.5vw,1.28rem); line-height:1.66; color:rgba(255,255,255,.88); max-width:60ch; margin-inline:auto}
+.privacy-closing p + p{margin-top:16px; color:rgba(255,255,255,.62); font-size:1.02rem}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .eco-grid{grid-template-columns:1fr 1fr}
+  .dev-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:880px){
+  .world-grid{grid-template-columns:1fr}
+  .vision-grid{grid-template-columns:1fr}
+  .family-card{grid-template-columns:1fr; gap:34px}
+}
+@media (max-width:640px){
+  .eco-grid{grid-template-columns:1fr}
+  .dev-grid{grid-template-columns:1fr}
+  .embed-frame{border-radius:18px}
+}
+
+/* ============================================================
+   v2 — full-bleed presentation, eco accent, vision feature
+   list, devices showcase (overrides the originals above)
+   ============================================================ */
+
+/* ---- Presentation: full-bleed, no frame ---- */
+.pets-presentation{position:relative; width:100%; background:var(--ink); line-height:0}
+.pets-presentation .embed-ratio{position:relative; width:100%; padding-top:56.25%}
+.pets-presentation .embed-ratio iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block}
+
+/* ---- Ecosystem cards: yellow top accent on hover (like wearables detail) ---- */
+.eco-card{position:relative; overflow:hidden}
+.eco-card:hover{border-color:var(--line-l)}
+.eco-card::after{content:""; position:absolute; left:0; right:0; top:0; height:3px; background:var(--yellow);
+  transform:scaleX(0); transform-origin:left; transition:transform .5s var(--ease)}
+.eco-card:hover::after{transform:scaleX(1)}
+
+/* ============================================================
+   OUR VISION — WHOOP-style vertical feature list
+   ============================================================ */
+.vision-feature .vision-title{font-size:clamp(2rem,4.6vw,3.9rem); font-weight:500; letter-spacing:-.03em;
+  line-height:1.0; text-align:left; margin:0 0 clamp(40px,5vw,72px); text-wrap:balance; color:var(--ink)}
+.vision-layout{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(40px,6vw,90px); align-items:center}
+.vision-list{display:flex; flex-direction:column}
+.vfeat{position:relative; display:flex; gap:20px; align-items:flex-start; width:100%; text-align:left;
+  background:none; border:0; border-top:1px solid var(--line-l); cursor:pointer; font-family:inherit;
+  padding:clamp(18px,2.1vw,28px) 0}
+.vfeat:last-child{border-bottom:1px solid var(--line-l)}
+.vfeat .vbar{flex:none; width:3px; align-self:stretch; border-radius:3px; background:transparent; transition:background .4s var(--ease)}
+.vfeat.on .vbar{background:var(--yellow)}
+.vtext{display:flex; flex-direction:column; min-width:0}
+.vfeat .vh{font-size:clamp(1.35rem,2.3vw,1.95rem); font-weight:700; letter-spacing:-.022em; color:#9aa4a9; transition:color .4s var(--ease)}
+.vfeat.on .vh{color:var(--ink)}
+.vfeat .vp{font-size:clamp(1rem,1.3vw,1.18rem); line-height:1.55; color:var(--muted-l); max-height:0; opacity:0; overflow:hidden;
+  transition:max-height .55s var(--ease), opacity .4s var(--ease), margin-top .55s var(--ease)}
+.vfeat.on .vp{max-height:170px; opacity:1; margin-top:12px}
+
+.vision-media{position:relative; aspect-ratio:4/5; max-height:560px; border-radius:26px; overflow:hidden;
+  border:1px solid var(--line-l); background:linear-gradient(155deg,#e9ecee,#dfe4e6); box-shadow:0 44px 90px -56px rgba(13,36,48,.35)}
+.vision-img{position:absolute; inset:0; display:grid; place-items:center; opacity:0; color:rgba(13,36,48,.18);
+  transition:opacity .6s var(--ease)}
+.vision-img.on{opacity:1}
+.vision-img svg{width:40%; height:40%; position:relative; z-index:1}
+.vision-img .vglow{position:absolute; inset:0; background:radial-gradient(58% 56% at 50% 42%, rgba(253,224,53,.22), transparent 64%)}
+
+/* ============================================================
+   FLOMAD SMART PET DEVICES — 2/3 framed image + 1/3 text
+   ============================================================ */
+.devices-section{padding-bottom:clamp(70px,9vw,120px)}
+.dev-show{position:relative; width:100%; margin-top:clamp(40px,5vw,66px)}
+.dev-show-inner{display:grid; grid-template-columns:2fr 1fr; gap:clamp(28px,3.4vw,52px); align-items:stretch}
+
+/* left 2/3 — framed image stage */
+.dev-stage{position:relative; border-radius:24px; overflow:hidden; border:1px solid var(--line-d);
+  background:var(--ink); min-height:clamp(420px,56vh,620px); box-shadow:0 50px 100px -60px rgba(0,0,0,.7)}
+.dev-bgs{position:absolute; inset:0}
+.dev-bg{position:absolute; inset:0; opacity:0; transition:opacity .9s var(--ease); display:grid; place-items:center;
+  background:#0a1a22 center/cover no-repeat}
+.dev-bg.on{opacity:1}
+.dev-bg[data-dev="collar"]{background-image:linear-gradient(150deg,#15394b 0%,#0a1f29 60%,#081820 100%)}
+.dev-bg[data-dev="feeder"]{background-image:linear-gradient(150deg,#3a3214 0%,#13202a 60%,#081820 100%)}
+.dev-bg[data-dev="water"]{background-image:linear-gradient(150deg,#123a44 0%,#0b2330 60%,#081820 100%)}
+.dev-bg[data-dev="litter"]{background-image:linear-gradient(150deg,#2a2640 0%,#111f2b 60%,#081820 100%)}
+.dev-bg[data-dev="calming"]{background-image:linear-gradient(150deg,#3a1f33 0%,#141f2b 60%,#081820 100%)}
+.dev-bg[data-dev="robots"]{background-image:linear-gradient(150deg,#143a2c 0%,#0c2230 60%,#081820 100%)}
+.dev-bg .dev-ph{display:grid; place-items:center; color:rgba(255,255,255,.14)}
+.dev-bg .dev-ph svg{width:min(26vw,260px); height:min(26vw,260px)}
+.dev-stage-scrim{position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, transparent 55%, rgba(8,20,28,.5) 100%)}
+
+/* right 1/3 — vertical accordion of product names + detail */
+.dev-side{display:flex; flex-direction:column; justify-content:center}
+.dev-list{display:flex; flex-direction:column}
+.dev-tab{position:relative; display:block; width:100%; text-align:left; background:none; border:0;
+  border-top:1px solid var(--line-d); cursor:pointer; font-family:inherit; padding:clamp(16px,1.7vw,22px) 0 clamp(16px,1.7vw,22px) 20px}
+.dev-tab:last-child{border-bottom:1px solid var(--line-d)}
+.dev-tab::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:3px; background:transparent; transition:background .4s var(--ease)}
+.dev-tab.on::before{background:var(--yellow)}
+.dev-tab .dt-name{display:block; font-size:clamp(1.18rem,1.5vw,1.5rem); font-weight:700; letter-spacing:-.02em; color:rgba(255,255,255,.5); transition:color .4s var(--ease)}
+.dev-tab:hover .dt-name{color:rgba(255,255,255,.8)}
+.dev-tab.on .dt-name{color:#fff}
+.dev-tab .dt-detail{display:block; max-height:0; opacity:0; overflow:hidden;
+  transition:max-height .55s var(--ease), opacity .4s var(--ease), margin-top .55s var(--ease)}
+.dev-tab.on .dt-detail{max-height:260px; opacity:1; margin-top:12px}
+.dev-tab .desc{display:block; font-size:1.02rem; line-height:1.55; color:var(--muted-d)}
+.dev-tab .dtags{display:flex; flex-wrap:wrap; gap:9px; margin-top:16px}
+.dev-tab .dtag{display:inline-flex; align-items:center; gap:8px; font-size:.86rem; font-weight:500; color:rgba(255,255,255,.82);
+  padding:7px 13px; border-radius:999px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16)}
+.dev-tab .dtag::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--yellow)}
+
+@media (max-width:880px){
+  .vision-layout{grid-template-columns:1fr; gap:34px}
+  .vision-media{order:-1; aspect-ratio:16/11; max-height:none}
+  .dev-show-inner{grid-template-columns:1fr; gap:24px}
+  .dev-stage{min-height:clamp(320px,46vh,440px)}
+}
+
+/* ============================================================
+   REAL PHOTOGRAPHY — devices, pet's world, vision
+   ============================================================ */
+
+/* ---- Flomad Smart Pet Devices: photo per device ---- */
+.dev-bg{background-size:cover; background-position:center}
+.dev-bg .dev-ph{display:none}
+.dev-bg[data-dev="collar"]{background-image:url(assets/pets/dev-collar.jpg)}
+.dev-bg[data-dev="feeder"]{background-image:url(assets/pets/dev-feeder.jpg)}
+.dev-bg[data-dev="water"]{background-image:url(assets/pets/dev-water.jpg)}
+.dev-bg[data-dev="litter"]{background-image:url(assets/pets/dev-litter.jpg)}
+.dev-bg[data-dev="calming"]{background-image:url(assets/pets/dev-calming.jpg)}
+.dev-bg[data-dev="robots"]{background-image:url(assets/pets/dev-robots.jpg)}
+
+/* ---- Understanding Your Pet's World: photo per carousel slide ---- */
+.feature-track .feature .media{background-size:cover; background-position:center}
+.feature-track .feature .media .glyph{display:none}
+.feature-track .feature .media::after{content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(8,20,28,.42) 0%, transparent 30%, transparent 55%, rgba(8,20,28,.6) 100%)}
+.feature-track .feature .media .grain,.feature-track .feature .media .vig{z-index:1}
+.feature-track .feature .media .idx,.feature-track .feature .media .tag{z-index:2}
+.feature-track .feature:nth-child(1) .media{background-image:url(assets/pets/world-behavior.jpg)}
+.feature-track .feature:nth-child(2) .media{background-image:url(assets/pets/world-environment.jpg)}
+.feature-track .feature:nth-child(3) .media{background-image:url(assets/pets/world-stress.jpg)}
+.feature-track .feature:nth-child(4) .media{background-image:url(assets/pets/world-health.jpg)}
+
+/* ---- Our Vision for Pet Wellness: photo per active item ---- */
+.vision-img{background-size:cover; background-position:center}
+.vision-img svg{display:none}
+.vision-img .vglow{background:linear-gradient(180deg, transparent 55%, rgba(8,20,28,.28) 100%)}
+.vision-img[data-i="0"]{background-image:url(assets/pets/vision-behavior.jpg)}
+.vision-img[data-i="1"]{background-image:url(assets/pets/vision-care.jpg)}
+.vision-img[data-i="2"]{background-image:url(assets/pets/vision-insights.jpg)}
+.vision-img[data-i="3"]{background-image:url(assets/pets/vision-thriving.jpg)}
+
+/* ============================================================
+   BACKGROUND VIDEOS — hero (dog) + privacy closing (cat)
+   ============================================================ */
+.hero.pets .hero-media{overflow:hidden}
+/* neutralize the shared .hero scrim so ONLY the single light gradient below applies */
+.hero.pets::after{display:none}
+.closing.pets::after{display:none}
+.hero.pets .hero-video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0}
+/* match the Athletes hero: ONE light gradient (the shared .hero::after),
+   bright at top, darkening only toward the bottom where the text sits */
+.hero.pets .hero-media::after{content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(10,26,34,.30) 0%,
+    rgba(10,26,34,.06) 26%,
+    rgba(10,26,34,.30) 60%,
+    rgba(10,26,34,.74) 100%)}
+.hero.pets .grid-bg{z-index:2; opacity:.16}
+.hero.pets .hero-inner{z-index:3}
+.hero.pets .scrollcue{z-index:3}
+
+.closing.pets .closing-media{overflow:hidden}
+.closing.pets .closing-video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0}
+/* match the Athletes closing scrim — lighter, lets the cat video read clearly */
+.closing.pets .closing-media::after{content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(10,26,34,.42), rgba(10,26,34,.3) 45%, rgba(10,26,34,.6)),
+             radial-gradient(120% 90% at 50% 42%, rgba(10,26,34,.1), rgba(10,26,34,.5))}
+.closing.pets .inner{position:relative; z-index:2}
