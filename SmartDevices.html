@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smart Devices — MoodChanger.AI</title>
+<meta name="description" content="Detailed insights into body composition, including fat percentage, muscle mass, and cardiovascular health. Monitor your health and track progress effortlessly." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="layout.css" />
+<script>
+  (function(){var t=localStorage.getItem('mc-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<style>
+  /* offset anchored device sections so their tops clear the sticky nav */
+  .device{scroll-margin-top:96px}
+
+  /* AI Health Insights — dark hero band with white title (matches other device heroes) */
+  .ai-hero-dark{background:linear-gradient(165deg,#0d2430 0%,#16384a 55%,#1C4259 100%); color:#fff;
+    padding:clamp(96px,14vh,160px) 0; text-align:center}
+  .ai-hero-dark .hero-head{color:#fff}
+  .ai-hero-dark .hero-sub{color:rgba(255,255,255,.86)}
+
+  /* ===== canonical MoodChanger header (scoped under .site-header so it
+     never collides with this page's styles.css .nav/.brand rules) ===== */
+  .site-header{
+    --yellow:#FDE035; --caipo:#9d52eb; --line-d:rgba(255,255,255,.14);
+    --muted-d:rgba(255,255,255,.64); --muted-d2:rgba(255,255,255,.46);
+    --ease:cubic-bezier(.22,.7,.3,1); --maxw:1280px;
+    position:sticky; top:0; z-index:900;
+    background:rgba(10,26,34,.92); backdrop-filter:blur(18px) saturate(1.2);
+    border-bottom:1px solid var(--line-d);
+    font-family:"Schibsted Grotesk",system-ui,sans-serif;
+  }
+  .site-header .header-row{display:flex; align-items:center; justify-content:space-between; gap:24px;
+    width:min(var(--maxw),92vw); margin-inline:auto; padding:14px 0}
+  .site-header .brand{display:flex; align-items:center; gap:13px}
+  .site-header .brand .mark{width:42px; height:42px; transition:transform .5s var(--ease)}
+  .site-header .brand:hover .mark{transform:rotate(-9deg) scale(1.07)}
+  .site-header .brand .word{display:flex; align-items:baseline; font-weight:600; font-size:1.32rem;
+    letter-spacing:.005em; white-space:nowrap; color:#fff}
+  .site-header .brand .word .a{color:var(--yellow)}
+  .site-header .nav{display:flex; align-items:center; gap:4px; box-shadow:none!important;
+    position:static; inset:auto; width:auto; max-width:none; height:auto; margin:0; padding:0;
+    background:transparent; border:0; backdrop-filter:none}
+  .site-header .nav > .item{position:relative}
+  .site-header .nav > .item > a, .site-header .nav > .item > .trigger{
+    display:inline-flex; align-items:center; gap:6px; padding:9px 13px; border-radius:9px;
+    font-size:.92rem; font-weight:500; color:rgba(255,255,255,.82); cursor:pointer; white-space:nowrap;
+    transition:color .25s, background .25s; background:transparent; border:0; font-family:inherit; position:relative}
+  .site-header .nav > .item > a:hover, .site-header .nav > .item:hover > .trigger{color:#fff; background:rgba(255,255,255,.08)}
+  .site-header .nav .item.active > a, .site-header .nav .item.active > .trigger{color:#fff}
+  .site-header .nav .item.active > a::after, .site-header .nav .item.active > .trigger::after{
+    content:""; position:absolute; left:13px; right:13px; bottom:3px; height:2px; background:var(--yellow); border-radius:2px}
+  .site-header .chev{width:13px; height:13px; transition:transform .3s var(--ease)}
+  .site-header .nav .item.has-menu:hover .chev{transform:rotate(180deg)}
+  .site-header .caipo-pill{font-weight:700; letter-spacing:.18em; font-size:.78rem;
+    border:1px solid rgba(157,82,235,.5); color:#cbb3ff; padding:9px 14px; border-radius:999px;
+    box-shadow:0 0 18px rgba(157,82,235,.18), inset 0 0 14px rgba(157,82,235,.12)}
+  .site-header .caipo-pill:hover{border-color:#cbb3ff; color:#fff; background:rgba(157,82,235,.16)}
+  .site-header .menu{position:absolute; top:calc(100% + 10px); left:0; min-width:230px;
+    background:rgba(13,36,48,.95); backdrop-filter:blur(20px); border:1px solid var(--line-d); border-radius:14px;
+    padding:8px; opacity:0; visibility:hidden; transform:translateY(8px); transition:.3s var(--ease); z-index:50}
+  .site-header .menu.scroll{display:grid; grid-template-columns:1fr 1fr; gap:2px; min-width:430px}
+  .site-header .nav .item.has-menu:hover .menu, .site-header .nav .item.has-menu:focus-within .menu{opacity:1; visibility:visible; transform:none}
+  .site-header .menu a{display:block; padding:9px 13px; border-radius:9px; font-size:.9rem; color:var(--muted-d); transition:.2s}
+  .site-header .menu a:hover{background:rgba(253,224,53,.12); color:#fff}
+  .site-header .burger{display:none; flex-direction:column; gap:5px; width:44px; height:44px; align-items:center; justify-content:center;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); border-radius:11px; cursor:pointer; z-index:60}
+  .site-header .burger i{width:20px; height:2px; background:#fff; border-radius:2px; transition:.3s var(--ease)}
+  @media (max-width:760px){
+    .site-header .nav{position:fixed; inset:0 0 0 auto; width:min(86vw,360px); background:rgba(10,26,34,.97);
+      backdrop-filter:blur(20px); flex-direction:column; align-items:stretch; justify-content:flex-start; gap:2px;
+      padding:96px 16px 40px; transform:translateX(100%); transition:transform .5s var(--ease); overflow-y:auto; border-left:1px solid var(--line-d)}
+    body.nav-open .site-header .nav{transform:none}
+    .site-header .nav > .item{width:100%}
+    .site-header .nav > .item > a, .site-header .nav > .item > .trigger{width:100%; font-size:1rem; padding:13px 14px}
+    .site-header .menu{position:static; opacity:1; visibility:visible; transform:none; background:transparent;
+      border:0; padding:0 0 6px 12px; min-width:0; backdrop-filter:none}
+    .site-header .menu.scroll{display:block; min-width:0}
+    .site-header .menu a{color:var(--muted-d2)}
+    .site-header .chev{display:none}
+    .site-header .burger{display:flex}
+    body.nav-open .site-header .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    body.nav-open .site-header .burger i:nth-child(2){opacity:0}
+    body.nav-open .site-header .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================= NAV ============================= -->
+<header class="site-header" data-header>
+  <div class="header-row">
+    <a class="brand" href="Home.html" aria-label="MoodChanger home">
+      <img class="mark" src="assets/flomadlogo.svg" alt="">
+      <span class="word">Mood<span class="a">Changer</span>.ai</span>
+    </a>
+
+    <button class="burger" data-nav-toggle aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+
+    <nav class="nav" data-nav aria-label="Primary">
+      <div class="item">
+        <a class="caipo-pill" href="https://www.caipo.ai/" target="_blank" rel="noopener">CAIPO</a>
+      </div>
+
+      <div class="item has-menu">
+        <a class="trigger" href="Wearables.html">Wearables
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu scroll">
+          <a href="Wearables.html#smart-glasses">SmartGlasses</a>
+          <a href="Wearables.html#eeg-hardware">EEG Hardware</a>
+          <a href="Wearables.html#smart-ring">Smart Ring</a>
+          <a href="Wearables.html#brain-monitor">Brain Monitor</a>
+          <a href="Wearables.html#smart-foot-pods">Smart Foot Pods</a>
+          <a href="Wearables.html#smart-insoles">Smart Insoles</a>
+          <a href="Wearables.html#smart-watch">Smart Watch</a>
+          <a href="Wearables.html#exoskeleton">Exoskeleton</a>
+          <a href="Wearables.html#smart-gloves">Smart Gloves</a>
+          <a href="Wearables.html#smart-shirt">Smart Shirt</a>
+          <a href="Wearables.html#smart-suit">Smart Suit</a>
+          <a href="Wearables.html#smart-posture-trainer">Smart Posture Trainer</a>
+        </div>
+      </div>
+
+      <div class="item has-menu active">
+        <a class="trigger" href="SmartDevices.html">Smart Devices
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu">
+          <a href="SmartDevices.html#ai-insights">AI Health Insights</a>
+          <a href="SmartDevices.html#smart-scale">Smart Scale</a>
+          <a href="SmartDevices.html#smart-bottle">Smart Bottle</a>
+          <a href="SmartDevices.html#smart-robots">Smart Robots</a>
+        </div>
+      </div>
+
+      <div class="item has-menu">
+        <a class="trigger" href="People.html">People
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu">
+          <a href="People.html#allergies">Allergies</a>
+          <a href="People.html#stuttering">Stuttering</a>
+          <a href="People.html#cognitive">Cognitive Loss</a>
+        </div>
+      </div>
+
+      <div class="item"><a href="Athletes.html">Athletes</a></div>
+      <div class="item"><a href="Pets.html">Pets</a></div>
+    </nav>
+  </div>
+</header>
+
+<script>
+(function(){
+  var t=document.querySelector('[data-nav-toggle]'), n=document.querySelector('[data-nav]');
+  if(t){t.addEventListener('click',function(){var o=document.body.classList.toggle('nav-open');t.setAttribute('aria-expanded',o?'true':'false');});}
+  if(n){n.addEventListener('click',function(e){if(e.target.closest('a')){document.body.classList.remove('nav-open');if(t)t.setAttribute('aria-expanded','false');}});}
+})();
+</script>
+
+
+<div class="device" id="ai-insights" data-screen-label="AI Health Insights">
+<!-- ============================= HERO ============================= -->
+<section class="hero hero-headblock ai-hero-dark">
+  <div class="wrap">
+    <div class="hero-center reveal" style="max-width:1000px">
+      <h1 class="hero-head" style="font-size:72px;color:#fff">AI Health Insights</h1>
+      <p class="hero-sub" style="max-width:1000px;margin-left:auto;margin-right:auto">AI Health Insights analyze gut microbiome and metabolic data to generate AI-driven recommendations that improve digestion, reduce inflammation, and enhance overall well-being.</p>
+    </div>
+  </div>
+</section>
+
+<section class="b-insights">
+  <div class="hero-bleed ss-hero ss-hero-dark ai-mc-band reveal">
+    <img src="img-ai-mc-radiology.jpg" alt="Radiologist reviewing CT scans on screen" />
+    <div class="ss-hero-overlay"><div class="ss-hero-inner">
+      <h2 class="ss-hero-title" style="font-size:46px">AI Health Insights + MoodChanger</h2>
+      <p class="ss-hero-body" style="font-size:20px">CAIPO turns these insights into personalized wellness plans that boost physical performance and energy levels. MoodChanger applies them to support emotional balance and stress reduction through the gut-brain connection.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================= CORE CAPABILITIES ============================= -->
+<section class="b-capabilities cap-titled">
+  <div class="wrap">
+    <div class="cap-cards">
+      <article class="cap-card reveal">
+        <figure class="cap-card-media"><img src="img-card-gut.jpg" alt="Gut microbiome analysis" /><figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Core Capabilities</h2></div></figcaption><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Gut Testing</h3><p>Analyzes microbiome health.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d1">
+        <figure class="cap-card-media"><img src="img-card-plans.jpg" alt="Personalized meal photographed on a phone" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Custom Plans</h3><p>Personalized food and supplement recommendations.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d2">
+        <figure class="cap-card-media"><img src="img-card-aiinsights.jpg" alt="AI circuit-board brain" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">AI Insights</h3><p>Actionable steps for wellness.</p></div></figcaption></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FEATURES & APPLICATIONS ============================= -->
+<section class="b-applications section-alt cap-titled">
+  <div class="wrap">
+    <div class="app-strips">
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-app-healthcare.jpg" alt="Doctor using a phone" />
+          <figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Features &amp; Applications</h2></div></figcaption>
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Healthcare</h3>
+            <p>Address inflammation and chronic disease risks.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-app-sports.jpg" alt="Rugby players in a scrum" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Sports</h3>
+            <p>Improve performance with gut health optimization.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-app-productivity.jpg" alt="Person meditating by the water" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Productivity</h3>
+            <p>Enhance energy and mental clarity.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-app-mood.jpg" alt="Smiling blocks" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">MoodChanging</h3>
+            <p>Support emotional balance via gut-brain health.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="device" id="smart-scale" data-screen-label="Smart Scale">
+<!-- ============================= HERO ============================= -->
+<section class="hero hero-img">
+  <div class="hero-bleed ss-hero ss-hero-white-plain reveal">
+    <img src="img-ss-scale-woman.jpg" alt="Woman holding a smart scale and checking her phone at home" />
+    <div class="ss-hero-overlay"><div class="ss-hero-inner">
+      <h2 class="ss-hero-title" style="font-size:72px;text-transform:none;color:#fde035">Smart Scale</h2>
+      <p class="ss-hero-body" style="font-size:20px">Detailed insights into body composition, including fat percentage, muscle mass, and cardiovascular health. Help users monitor their health and track progress effortlessly.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================= SMART SCALE + MOODCHANGER ============================= -->
+<section class="b-insights">
+  <div class="hero-bleed ss-hero ss-hero-dark no-scrim reveal">
+    <img src="img-ss-mc-scale2.jpg" alt="Bare feet stepping onto a smart body-composition scale" />
+    <div class="ss-hero-overlay"><div class="ss-hero-inner">
+      <h2 class="ss-hero-title" style="font-size:46px;text-transform:none">Smart Scale + MoodChanger</h2>
+      <p class="ss-hero-body" style="font-size:20px">With CAIPO, personalized health recommendations encourage healthy habits and help users achieve fitness goals. MoodChanger uses Smart Scale data to boost confidence and motivation by visualizing progress and promoting a positive self-image.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================= CORE CAPABILITIES ============================= -->
+<section class="b-capabilities cap-titled">
+  <div class="wrap">
+    <div class="cap-cards">
+      <article class="cap-card reveal">
+        <figure class="cap-card-media"><img src="img-card-autosync.jpg" alt="Wireless device syncing" /><figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Core Capabilities</h2></div></figcaption><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Auto-sync</h3><p>Connects via Wi-Fi or Bluetooth.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d1">
+        <figure class="cap-card-media"><img src="img-card-multiuser.jpg" alt="Multiple users" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Multi-User</h3><p>Supports multiple profiles.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d2">
+        <figure class="cap-card-media"><img src="img-card-health.jpg" alt="Heart health metrics" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Health Metrics</h3><p>Includes heart health insights.</p></div></figcaption></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FEATURES & APPLICATIONS ============================= -->
+<section class="b-applications">
+  <div class="wrap">
+    <div class="app-strips">
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-ss-healthcare.jpg" alt="Nurse reviewing health charts with a patient" />
+          <figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Features &amp; Applications</h2></div></figcaption>
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Healthcare</h3>
+            <p>Monitor weight trends and cardiovascular health.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-ss-sports.jpg" alt="Coach analyzing athletes on a tablet at an indoor track" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Sports</h3>
+            <p>Track body composition for performance improvements.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-ss-productivity.jpg" alt="Health analytics dashboard on phone and tablet" />
+          <figcaption class="app-overlay app-overlay-strong"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Productivity</h3>
+            <p>Build healthy habits with reminders.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-ss-mood.jpg" alt="Smiling man relaxing with a warm drink and tablet" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">MoodChanging</h3>
+            <p>Boost confidence with progress tracking.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="device" id="smart-bottle" data-screen-label="Smart Bottle">
+<!-- ============================= HERO ============================= -->
+<section class="hero hero-img">
+  <div class="hero-bleed ss-hero ss-hero-dark reveal">
+    <img src="img-sb-hero.jpg" alt="Water bottle with fresh greens and fruit" />
+    <div class="ss-hero-overlay"><div class="ss-hero-inner">
+      <h2 class="ss-hero-title" style="font-size:72px;text-transform:none;color:#fde035">Smart Bottle</h2>
+      <p class="ss-hero-body" style="font-size:20px">Self-cleaning water bottle that uses UV-C technology to purify water and eliminate harmful bacteria. Its sleek, insulated design ensures drinks remain fresh and at the perfect temperature.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================= SMART BOTTLE + MOODCHANGER ============================= -->
+<section class="b-insights">
+  <div class="hero-bleed ss-hero ss-hero-dark reveal">
+    <img src="img-sb-mc.jpg" alt="Smart water bottle paired with the hydration tracking app" />
+    <div class="ss-hero-overlay"><div class="ss-hero-inner">
+      <h2 class="ss-hero-title" style="font-size:46px;text-transform:none">Smart Bottle + MoodChanger</h2>
+      <p class="ss-hero-body" style="font-size:20px;max-width:min(58%,760px)">Integrated with CAIPO, it tracks hydration levels and notifies users to drink regularly, supporting cognitive and physical performance. MoodChanger uses the smart bottle to support proper hydration, helping to reduce stress and improve mood.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================= CORE CAPABILITIES ============================= -->
+<section class="b-capabilities">
+  <div class="wrap">
+    <div class="cap-cards">
+      <article class="cap-card reveal">
+        <figure class="cap-card-media"><img src="img-sb-uvc.jpg" alt="UV-C water purification" /><figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Core Capabilities</h2></div></figcaption><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">UV-C Tech</h3><p>Purifies water and bottle.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d1">
+        <figure class="cap-card-media"><img src="img-sb-insulated.jpg" alt="Insulated bottle keeping drinks cold" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Insulated</h3><p>Keeps drinks hot or cold.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d2">
+        <figure class="cap-card-media"><img src="img-sb-eco.jpg" alt="Eco-friendly reusable bottle" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Eco-friendly</h3><p>Reduces plastic waste.</p></div></figcaption></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FEATURES & APPLICATIONS ============================= -->
+<section class="b-applications">
+  <div class="wrap">
+    <div class="app-strips">
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sb-healthcare.jpg" alt="Smart bottle water quality sensor with app" />
+          <figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Features &amp; Applications</h2></div></figcaption>
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Healthcare</h3>
+            <p>Support clean water intake.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sb-sports.jpg" alt="Runner checking smartwatch with a water bottle" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Sports</h3>
+            <p>Stay hydrated during workouts.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sb-prod.jpg" alt="Person at a desk reviewing the bottle app" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Productivity</h3>
+            <p>Maintain focus with proper hydration.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sb-mood.jpg" alt="Smiling person holding the smart bottle" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">MoodChanging</h3>
+            <p>Boost mood with hydration reminders.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="device" id="smart-robots" data-screen-label="Smart Robots">
+<!-- ============================= HERO ============================= -->
+<section class="hero hero-img">
+  <div class="hero-bleed ss-hero ss-hero-dark reveal">
+    <img src="img-sr-hero.jpg" alt="Humanoid robot working on a laptop in a modern office" />
+    <div class="ss-hero-overlay"><div class="ss-hero-inner">
+      <h2 class="ss-hero-title" style="font-size:72px;text-transform:none;color:#fde035">Smart Robots</h2>
+      <p class="ss-hero-body" style="font-size:20px">Equipped with 3D LiDAR, depth cameras, and gyroscopes for navigation and task execution.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================= SMART ROBOTS + MOODCHANGER ============================= -->
+<section class="b-insights">
+  <div class="hero-bleed ss-hero ss-hero-dark ai-mc-band reveal">
+    <img src="img-sr-mc.jpg" alt="Blue humanoid robot in a bright living room" />
+    <div class="ss-hero-overlay"><div class="ss-hero-inner">
+      <h2 class="ss-hero-title" style="font-size:46px;text-transform:none">Smart Robots + MoodChanger</h2>
+      <p class="ss-hero-body" style="max-width:min(58%,760px);font-size:20px">Integrated with CAIPO, these robots automate repetitive tasks and enhance workflow efficiency. MoodChanger brings a human touch by enabling robots to assist with emotional engagement and stress reduction, making them valuable in therapeutic and interactive settings.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============================= CORE CAPABILITIES ============================= -->
+<section class="b-capabilities cap-titled">
+  <div class="wrap">
+    <div class="cap-cards">
+      <article class="cap-card reveal">
+        <figure class="cap-card-media"><img src="img-sr-lidar.jpg" alt="Robots navigating a warehouse with LiDAR" /><figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Core Capabilities</h2></div></figcaption><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">3D LiDAR Navigation</h3><p>Enables precise movement and obstacle detection.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d1">
+        <figure class="cap-card-media"><img src="img-sr-task.jpg" alt="Robotic arm automating a packing task" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Task Automation</h3><p>Streamlines repetitive workflows for efficiency.</p></div></figcaption></figure>
+      </article>
+      <article class="cap-card reveal d2">
+        <figure class="cap-card-media"><img src="img-sr-emotional2.jpg" alt="Companion robot reading beside an elderly woman knitting" /><figcaption class="app-overlay"><div class="app-overlay-in"><h3 style="font-size:34px;text-transform:none">Emotional Engagement</h3><p>Assists with stress reduction and therapeutic support.</p></div></figcaption></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FEATURES & APPLICATIONS ============================= -->
+<section class="b-applications section-alt cap-titled">
+  <div class="wrap">
+    <div class="app-strips">
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sr-healthcare.jpg" alt="Companion robot with a nurse and child patient" />
+          <figcaption class="cap-title-top"><div class="app-overlay-in"><h2>Features &amp; Applications</h2></div></figcaption>
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Healthcare</h3>
+            <p>Enables research into biomechanics and prosthetic development with precise locomotion analysis.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sr-sports.jpg" alt="Athlete training in a robotic exoskeleton" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Sports</h3>
+            <p>Provides dynamic agility training and testing for robotic and human movement coordination.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sr-productivity.jpg" alt="Humanoid robot working at a smart office desk" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">Productivity</h3>
+            <p>Supports industrial tasks with autonomous navigation and payload transport in complex environments.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+      <article class="app-strip reveal">
+        <figure class="app-bleed">
+          <img src="img-sr-mood.jpg" alt="Companion robot engaging with a person" />
+          <figcaption class="app-overlay"><div class="app-overlay-in">
+            <h3 style="font-size:34px;text-transform:none">MoodChanging</h3>
+            <p>Engages users with interactive robotic demonstrations and entertainment, fostering interest and excitement in robotics.</p>
+          </div></figcaption>
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <!-- col 1 — brand -->
+      <div class="fc fc-brand">
+        <a class="brand" href="Home.html" aria-label="MoodChanger.AI home">
+          <span class="brand-mark">
+            <img class="brand-logo" src="logo.png" alt="MoodChanger" />
+          </span>
+          <span class="brand-word">Mood<span class="y">Changer</span>.ai</span>
+        </a>
+        <p class="f-desc">Part of FloLab Innovations group, Moodchanger provides AI-driven wellness and productivity support through personalized insights and wearable connectivity.</p>
+        <h5 class="f-head"><span class="acc">Follow</span> Us</h5>
+        <div class="f-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.25 8.25h4.5V24h-4.5V8.25ZM8 8.25h4.31v2.15h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V24h-4.5v-6.97c0-1.66-.03-3.8-2.31-3.8-2.32 0-2.67 1.81-2.67 3.68V24H8V8.25Z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.7.82.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></a>
+        </div>
+      </div>
+
+      <!-- col 2 — portfolio -->
+      <div class="fc fc-portfolio">
+        <h5 class="f-head"><span class="acc">Portfolio</span> A connected ecosystem</h5>
+        <div class="f-port-lists">
+          <ul>
+            <li><a href="#">FloLabs Innovations Group</a></li>
+            <li><a href="#">RoboCollective</a></li>
+            <li><a href="#">Athletic Performance Intelligence</a></li>
+            <li><a href="#">CAIPO</a></li>
+            <li><a href="#">Bootcamp university</a></li>
+            <li><a href="#">FloBrain</a></li>
+            <li><a href="#">Flo Travel</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Space Ventures Institute</a></li>
+            <li><a href="#">Legal &amp; Ethics Ventures Institute</a></li>
+            <li><a href="#">FloLabs International</a></li>
+            <li><a href="#">Connecting the Dots</a></li>
+            <li><a href="#">Hephaestus International</a></li>
+            <li><a href="#">FloStudio</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- col 3 — newsletter -->
+      <div class="fc fc-news">
+        <h5 class="f-head"><span class="acc">FloLab</span> Newsletter</h5>
+        <div class="f-news-card">
+          <p>Get your dose of innovation and inspiration. Our newsletter is your go-to source for staying in sync with the AI universe.</p>
+          <form class="f-news-form" novalidate>
+            <input class="f-news-input" type="email" placeholder="Enter your email" aria-label="Enter your email" />
+            <button class="f-news-btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="f-tagline">Live Long and Prosper</p>
+      <div class="f-links">
+        <a href="#">Merch Shop</a>
+        <a href="#">Product Support</a>
+        <a href="#">Contact us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail" data-bg-color="#1C4259">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect x="360" y="250" width="480" height="300" rx="28" fill="#ffffff"/>
+    <rect x="360" y="250" width="480" height="66" rx="28" fill="#f4f6f7"/>
+    <circle cx="398" cy="283" r="9" fill="#d3dadd"/>
+    <circle cx="428" cy="283" r="9" fill="#d3dadd"/>
+    <circle cx="458" cy="283" r="9" fill="#d3dadd"/>
+    <rect x="410" y="360" width="300" height="22" rx="11" fill="#1C4259"/>
+    <rect x="410" y="404" width="360" height="14" rx="7" fill="#e4e8ea"/>
+    <rect x="410" y="432" width="300" height="14" rx="7" fill="#e4e8ea"/>
+    <rect x="410" y="482" width="120" height="40" rx="20" fill="#FDE035"/>
+  </svg>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
