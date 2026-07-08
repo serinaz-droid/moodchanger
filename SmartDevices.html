@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Devices — MoodChanger.ai</title>
+<script>(function(){try{var t=localStorage.getItem('mc-theme');document.documentElement.setAttribute('data-theme',(t==='dark'||t==='light')?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="athletes.css">
+<link rel="stylesheet" href="wearables.css">
+</head>
+<body id="top" class="wear-body">
+
+<div class="progress" aria-hidden="true"></div>
+
+<header class="site-header" data-header>
+  <div class="header-row">
+    <a class="brand" href="Home.html" aria-label="MoodChanger home">
+      <img class="mark" src="assets/flomadlogo.svg" alt="">
+      <span class="word">Mood<span class="a">Changer</span>.ai</span>
+    </a>
+
+    <button class="burger" data-nav-toggle aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+
+    <nav class="nav" data-nav aria-label="Primary">
+      <div class="item">
+        <a class="caipo-pill" href="https://www.caipo.ai/" target="_blank" rel="noopener">CAIPO</a>
+      </div>
+
+      <div class="item has-menu">
+        <a class="trigger" href="Wearables.html">Wearables
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu scroll">
+          <a href="Wearables.html#smart-glasses">SmartGlasses</a>
+          <a href="Wearables.html#eeg-hardware">EEG Hardware</a>
+          <a href="Wearables.html#smart-ring">Smart Ring</a>
+          <a href="Wearables.html#brain-monitor">Brain Monitor</a>
+          <a href="Wearables.html#smart-foot-pods">Smart Foot Pods</a>
+          <a href="Wearables.html#smart-insoles">Smart Insoles</a>
+          <a href="Wearables.html#smart-watch">Smart Watch</a>
+          <a href="Wearables.html#exoskeleton">Exoskeleton</a>
+          <a href="Wearables.html#smart-gloves">Smart Gloves</a>
+          <a href="Wearables.html#smart-shirt">Smart Shirt</a>
+          <a href="Wearables.html#smart-suit">Smart Suit</a>
+          <a href="Wearables.html#smart-posture-trainer">Smart Posture Trainer</a>
+        </div>
+      </div>
+
+      <div class="item has-menu active">
+        <a class="trigger" href="SmartDevices.html">Smart Devices
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu">
+          <a href="#ai-insights">AI Health Insights</a>
+          <a href="#smart-scale">Smart Scale</a>
+          <a href="#smart-bottle">Smart Bottle</a>
+          <a href="#smart-robots">Smart Robots</a>
+        </div>
+      </div>
+
+      <div class="item has-menu">
+        <a class="trigger" href="People.html">People
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="menu">
+          <a href="People.html#allergies">Allergies</a>
+          <a href="People.html#stuttering">Stuttering</a>
+          <a href="People.html#cognitive">Cognitive Loss</a>
+        </div>
+      </div>
+
+      <div class="item"><a href="Athletes.html">Athletes</a></div>
+      <div class="item"><a href="Pets.html">Pets</a></div>
+      <div class="item theme-item">
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="showcase" aria-label="Smart Devices showcase">
+    <div class="show-track">
+      <div class="show-slide active" data-w="ai-insights">
+        <div class="shot" style="background:#08141c url(assets/sd-ai-insights.jpg) center/cover no-repeat"></div>
+        <div class="scrim"></div>
+        <div class="show-content">
+          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;01 / 04</span></span>
+          <h2 class="show-name">AI Health Insights</h2>
+          <p class="show-intro">AI Health Insights analyze gut microbiome and metabolic data to generate AI-driven recommendations that improve digestion, reduce inflammation, and enhance overall well-being.</p>
+          <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+      <div class="show-slide" data-w="smart-scale">
+        <div class="shot" style="background:#08141c url(assets/sd-smart-scale.jpg) center/cover no-repeat"></div>
+        <div class="scrim"></div>
+        <div class="show-content">
+          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;02 / 04</span></span>
+          <h2 class="show-name">Smart Scale</h2>
+          <p class="show-intro">Detailed insights into body composition, including fat percentage, muscle mass, and cardiovascular health. Help users monitor their health and track progress effortlessly.</p>
+          <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+      <div class="show-slide" data-w="smart-bottle">
+        <div class="shot" style="background:#08141c url(assets/sd-smart-bottle.jpg) center/cover no-repeat"></div>
+        <div class="scrim"></div>
+        <div class="show-content">
+          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;03 / 04</span></span>
+          <h2 class="show-name">Smart Bottle</h2>
+          <p class="show-intro">Self-cleaning water bottle that uses UV-C technology to purify water and eliminate harmful bacteria. Its sleek, insulated design ensures drinks remain fresh and at the perfect temperature.</p>
+          <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+      <div class="show-slide" data-w="smart-robots">
+        <div class="shot" style="background:#08141c url(img-sr-hero.jpg) center/cover no-repeat"></div>
+        <div class="scrim"></div>
+        <div class="show-content">
+          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;04 / 04</span></span>
+          <h2 class="show-name">Smart Robots</h2>
+          <p class="show-intro">Equipped with 3D LiDAR, depth cameras, and gyroscopes for navigation and task execution.</p>
+          <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-controls">
+      <span class="show-count"><b class="cur">01</b><span class="sep">/</span>04</span>
+      <button class="sbtn prev" aria-label="Previous device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="sbtn next" aria-label="Next device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+
+    <div class="show-dots">
+        <button aria-label="AI Health Insights" class="on"></button>
+        <button aria-label="Smart Scale"></button>
+        <button aria-label="Smart Bottle"></button>
+        <button aria-label="Smart Robots"></button>
+    </div>
+    <div class="show-strip"><div class="fill"></div></div>
+  </section>
+</main>
+
+<footer class="site-footer mc-footer">
+  <div class="wrap mcf-grid">
+    <div class="mcf-brand">
+      <div class="mcf-head">
+        <img class="mcf-logo" src="assets/flomadlogo.svg" alt="MoodChanger logo">
+        <div class="mcf-title">
+          <strong>MoodChanger.ai</strong>
+          <span>| by FloLabs Innovations Group</span>
+        </div>
+      </div>
+      <p class="mcf-desc">Transforming your wellbeing, one insight at a time. All your AI in one app, powered by FloBrain, to boost productivity, wellness, and lifestyle.</p>
+      <h4 class="mcf-h">Newsletter</h4>
+      <p class="mcf-sub">Receive the newest FloLabs updates at:</p>
+      <form class="mcf-news" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email..." aria-label="Email address">
+        <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+      </form>
+      <h4 class="mcf-h">Social Media</h4>
+      <div class="mcf-social">
+        <a href="https://www.youtube.com/@flolabsinnovation" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 3.6 12 3.6 12 3.6s-4.4 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.6.3 7.6.3s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.7 15.1V8.4l6.2 3.4-6.2 3.3z"></path></svg></a>
+        <a href="https://www.linkedin.com/company/flolabs-innovation/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.7H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.6 3.1 5.6 7.1v8H17.7v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7v7.3H7.8V8z"></path></svg></a>
+      </div>
+    </div>
+
+    <nav class="mcf-col" aria-label="Footer navigation">
+      <h4 class="mcf-h">Navigation</h4>
+      <a href="Home.html">Home</a>
+      <a href="Wearables.html">Wearables</a>
+      <a href="SmartDevices.html">Smart Devices</a>
+      <a href="People.html">People</a>
+      <a href="Athletes.html">Athletes</a>
+      <a href="Pets.html">Pets</a>
+    </nav>
+
+    <nav class="mcf-col" aria-label="FloLabs projects">
+      <h4 class="mcf-h">Projects</h4>
+      <a href="https://www.athleticperformanceintelligence.com/" target="_blank" rel="noopener">Athletic Performance Intelligence</a>
+      <a href="https://www.caipo.ai/" target="_blank" rel="noopener">CAIPO</a>
+      <a href="http://cosmosintelligence.org/" target="_blank" rel="noopener">Cosmos Intelligence</a>
+      <a href="https://www.youtube.com/@flolabsinnovation" target="_blank" rel="noopener">Connecting the Dots</a>
+      <a href="https://www.flomadtravel.com/" target="_blank" rel="noopener">Flo Travel</a>
+      <a href="https://www.flobrain.ai/" target="_blank" rel="noopener">FloBrain</a>
+      <a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener">FloLabs Innovations Group</a>
+      <a href="https://www.flolabs.international/" target="_blank" rel="noopener">FloLabs International</a>
+      <a href="https://www.flostudios.ai/" target="_blank" rel="noopener">FloStudios</a>
+      <a href="https://hephaestus.international/" target="_blank" rel="noopener">Hepheastus International</a>
+      <a href="https://www.bootcampuniversity.org/" target="_blank" rel="noopener">Innovation Bootcamp University</a>
+      <a href="https://www.moodchanger.ai/" target="_blank" rel="noopener">MoodChanger</a>
+      <a href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener">Legal &amp; Ethics Ventures Institute</a>
+      <a href="https://www.robocollective.ai/" target="_blank" rel="noopener">RoboCollective</a>
+      <a href="https://www.spaceventuresinstitute.com/" target="_blank" rel="noopener">Space Ventures Institute</a>
+      <a href="https://tarrl.org/" target="_blank" rel="noopener">TARRL</a>
+    </nav>
+
+    <nav class="mcf-col" aria-label="Company">
+      <h4 class="mcf-h">Company</h4>
+      <a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener">Careers</a>
+      <a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener">Contact Us</a>
+      <a href="https://flolabsrd.notion.site/merch-background" target="_blank" rel="noopener">Merch</a>
+    </nav>
+  </div>
+  <div class="mcf-bar">Live Long and Prosper</div>
+</footer>
+
+<!-- ============================ DETAIL VIEW ============================ -->
+<div class="detail" role="dialog" aria-modal="true" aria-label="Smart device details">
+  <div class="detail-bar">
+    <div class="row">
+      <button class="detail-close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>All smart devices</button>
+      <div class="detail-where"><span class="ix">01 / 4</span><span class="nm">AI Health Insights</span></div>
+      <div class="detail-arrows">
+        <button class="dbtn prev" aria-label="Previous device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="dbtn next" aria-label="Next device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="detail-stage">
+      <article class="detail-panel active" data-w="ai-insights" data-name="AI Health Insights" data-screen-label="AI Health Insights">
+        <div class="dp-hero">
+          <div class="shot" style="background:#08141c url(assets/sd-ai-insights.jpg) center/cover no-repeat"></div>
+          <div class="scrim"></div>
+          <div class="dp-headtext">
+            <h2 class="dp-title">AI Health Insights</h2>
+            <p class="dp-intro">AI Health Insights analyze gut microbiome and metabolic data to generate AI-driven recommendations that improve digestion, reduce inflammation, and enhance overall well-being.</p>
+          </div>
+        </div>
+        <div class="dp-body">
+          <div class="wear-mc">
+            <div class="wear-mc-inner">
+              <h3 class="wear-mc-title">AI Health Insights <span class="plus">+ MoodChanger</span></h3>
+              <p class="wear-mc-body"><span class="caipo">CAIPO</span> turns these insights into personalized wellness plans that boost physical performance and energy levels. MoodChanger applies them to support emotional balance and stress reduction through the gut-brain connection.</p>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Core Capabilities</span><span class="ln"></span></div>
+            <div class="cap-grid">
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v6L4.5 18a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 9V3M8.5 3h7M7 15h10"/></svg></span><h4>Gut Testing</h4><p>Analyzes microbiome health.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4a2 2 0 0 1 6 0M9 10h6M9 14h6M9 18h4"/></svg></span><h4>Custom Plans</h4><p>Personalized food and supplement recommendations.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19 10l-5.1 1.4L12 17l-1.9-5.6L5 10l5.1-1.4zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></span><h4>AI Insights</h4><p>Actionable steps for wellness.</p></article>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="app-grid">
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Address inflammation and chronic disease risks.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Improve performance with gut health optimization.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16M8 14l3-3 3 3 5-6"/></svg></span><div class="app-txt"><h4>Productivity</h4><p>Enhance energy and mental clarity.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19 10l-5.1 1.4L12 17l-1.9-5.6L5 10l5.1-1.4Z"/></svg></span><div class="app-txt"><h4>MoodChanging</h4><p>Support emotional balance via gut-brain health.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-panel" data-w="smart-scale" data-name="Smart Scale" data-screen-label="Smart Scale">
+        <div class="dp-hero">
+          <div class="shot" style="background:#08141c url(assets/sd-smart-scale.jpg) center/cover no-repeat"></div>
+          <div class="scrim"></div>
+          <div class="dp-headtext">
+            <h2 class="dp-title">Smart Scale</h2>
+            <p class="dp-intro">Detailed insights into body composition, including fat percentage, muscle mass, and cardiovascular health. Help users monitor their health and track progress effortlessly.</p>
+          </div>
+        </div>
+        <div class="dp-body">
+          <div class="wear-mc">
+            <div class="wear-mc-inner">
+              <h3 class="wear-mc-title">Smart Scale <span class="plus">+ MoodChanger</span></h3>
+              <p class="wear-mc-body">With <span class="caipo">CAIPO</span>, personalized health recommendations encourage healthy habits and help users achieve fitness goals. MoodChanger uses Smart Scale data to boost confidence and motivation by visualizing progress and promoting a positive self-image.</p>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Core Capabilities</span><span class="ln"></span></div>
+            <div class="cap-grid">
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8A8 8 0 0 0 6.3 6.3L4 8.5M4 8.5V4M4 8.5h4.5M4 16a8 8 0 0 0 13.7 1.7l2.3-2.2m0 0V20m0-4.5h-4.5"/></svg></span><h4>Auto-sync</h4><p>Connects via Wi-Fi or Bluetooth.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4.5-6.2"/></svg></span><h4>Multi-User</h4><p>Supports multiple profiles.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 3 10 2.5-7 1.5 2h5"/></svg></span><h4>Health Metrics</h4><p>Includes heart health insights.</p></article>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="app-grid">
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Monitor weight trends and cardiovascular health.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Track body composition for performance improvements.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16M8 14l3-3 3 3 5-6"/></svg></span><div class="app-txt"><h4>Productivity</h4><p>Build healthy habits with reminders.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19 10l-5.1 1.4L12 17l-1.9-5.6L5 10l5.1-1.4Z"/></svg></span><div class="app-txt"><h4>MoodChanging</h4><p>Boost confidence with progress tracking.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-panel" data-w="smart-bottle" data-name="Smart Bottle" data-screen-label="Smart Bottle">
+        <div class="dp-hero">
+          <div class="shot" style="background:#08141c url(assets/sd-smart-bottle.jpg) center/cover no-repeat"></div>
+          <div class="scrim"></div>
+          <div class="dp-headtext">
+            <h2 class="dp-title">Smart Bottle</h2>
+            <p class="dp-intro">Self-cleaning water bottle that uses UV-C technology to purify water and eliminate harmful bacteria. Its sleek, insulated design ensures drinks remain fresh and at the perfect temperature.</p>
+          </div>
+        </div>
+        <div class="dp-body">
+          <div class="wear-mc">
+            <div class="wear-mc-inner">
+              <h3 class="wear-mc-title">Smart Bottle <span class="plus">+ MoodChanger</span></h3>
+              <p class="wear-mc-body">Integrated with <span class="caipo">CAIPO</span>, it tracks hydration levels and notifies users to drink regularly, supporting cognitive and physical performance. MoodChanger uses the smart bottle to support proper hydration, helping to reduce stress and improve mood.</p>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Core Capabilities</span><span class="ln"></span></div>
+            <div class="cap-grid">
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><h4>UV-C Tech</h4><p>Purifies water and bottle.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4a2 2 0 0 1 4 0v9.5a4 4 0 1 1-4 0V4z"/><circle cx="12" cy="17" r="1.6" fill="currentColor" stroke="none"/></svg></span><h4>Insulated</h4><p>Keeps drinks hot or cold.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20C5 10 10 4 20 4c0 10-5 15-13 15M5 20c2-5 5-8 10-10"/></svg></span><h4>Eco-friendly</h4><p>Reduces plastic waste.</p></article>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="app-grid">
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Support clean water intake.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Stay hydrated during workouts.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16M8 14l3-3 3 3 5-6"/></svg></span><div class="app-txt"><h4>Productivity</h4><p>Maintain focus with proper hydration.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19 10l-5.1 1.4L12 17l-1.9-5.6L5 10l5.1-1.4Z"/></svg></span><div class="app-txt"><h4>MoodChanging</h4><p>Boost mood with hydration reminders.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="detail-panel" data-w="smart-robots" data-name="Smart Robots" data-screen-label="Smart Robots">
+        <div class="dp-hero">
+          <div class="shot" style="background:#08141c url(img-sr-hero.jpg) center/cover no-repeat"></div>
+          <div class="scrim"></div>
+          <div class="dp-headtext">
+            <h2 class="dp-title">Smart Robots</h2>
+            <p class="dp-intro">Equipped with 3D LiDAR, depth cameras, and gyroscopes for navigation and task execution.</p>
+          </div>
+        </div>
+        <div class="dp-body">
+          <div class="wear-mc">
+            <div class="wear-mc-inner">
+              <h3 class="wear-mc-title">Smart Robots <span class="plus">+ MoodChanger</span></h3>
+              <p class="wear-mc-body">Integrated with <span class="caipo">CAIPO</span>, these robots automate repetitive tasks and enhance workflow efficiency. MoodChanger brings a human touch by enabling robots to assist with emotional engagement and stress reduction, making them valuable in therapeutic and interactive settings.</p>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Core Capabilities</span><span class="ln"></span></div>
+            <div class="cap-grid">
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12 18 6"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></span><h4>3D LiDAR Navigation</h4><p>Enables precise movement and obstacle detection.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></span><h4>Task Automation</h4><p>Streamlines repetitive workflows for efficiency.</p></article>
+            <article class="cap"><span class="cap-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9 10h.01M15 10h.01M8.5 14.5a5 5 0 0 0 7 0"/></svg></span><h4>Emotional Engagement</h4><p>Assists with stress reduction and therapeutic support.</p></article>
+            </div>
+          </div>
+          <div class="wear-block">
+            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="app-grid">
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Enables research into biomechanics and prosthetic development with precise locomotion analysis.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Provides dynamic agility training and testing for robotic and human movement coordination.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16M8 14l3-3 3 3 5-6"/></svg></span><div class="app-txt"><h4>Productivity</h4><p>Supports industrial tasks with autonomous navigation and payload transport in complex environments.</p></div></article>
+            <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19 10l-5.1 1.4L12 17l-1.9-5.6L5 10l5.1-1.4Z"/></svg></span><div class="app-txt"><h4>MoodChanging</h4><p>Engages users with interactive robotic demonstrations and entertainment, fostering interest and excitement in robotics.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </article>
+  </div>
+
+<footer class="site-footer mc-footer">
+  <div class="wrap mcf-grid">
+    <div class="mcf-brand">
+      <div class="mcf-head">
+        <img class="mcf-logo" src="assets/flomadlogo.svg" alt="MoodChanger logo">
+        <div class="mcf-title">
+          <strong>MoodChanger.ai</strong>
+          <span>| by FloLabs Innovations Group</span>
+        </div>
+      </div>
+      <p class="mcf-desc">Transforming your wellbeing, one insight at a time. All your AI in one app, powered by FloBrain, to boost productivity, wellness, and lifestyle.</p>
+      <h4 class="mcf-h">Newsletter</h4>
+      <p class="mcf-sub">Receive the newest FloLabs updates at:</p>
+      <form class="mcf-news" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email..." aria-label="Email address">
+        <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+      </form>
+      <h4 class="mcf-h">Social Media</h4>
+      <div class="mcf-social">
+        <a href="https://www.youtube.com/@flolabsinnovation" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 3.6 12 3.6 12 3.6s-4.4 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.6.3 7.6.3s4.4 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.7 15.1V8.4l6.2 3.4-6.2 3.3z"></path></svg></a>
+        <a href="https://www.linkedin.com/company/flolabs-innovation/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.7H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.6 3.1 5.6 7.1v8H17.7v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7v7.3H7.8V8z"></path></svg></a>
+      </div>
+    </div>
+
+    <nav class="mcf-col" aria-label="Footer navigation">
+      <h4 class="mcf-h">Navigation</h4>
+      <a href="Home.html">Home</a>
+      <a href="Wearables.html">Wearables</a>
+      <a href="SmartDevices.html">Smart Devices</a>
+      <a href="People.html">People</a>
+      <a href="Athletes.html">Athletes</a>
+      <a href="Pets.html">Pets</a>
+    </nav>
+
+    <nav class="mcf-col" aria-label="FloLabs projects">
+      <h4 class="mcf-h">Projects</h4>
+      <a href="https://www.athleticperformanceintelligence.com/" target="_blank" rel="noopener">Athletic Performance Intelligence</a>
+      <a href="https://www.caipo.ai/" target="_blank" rel="noopener">CAIPO</a>
+      <a href="http://cosmosintelligence.org/" target="_blank" rel="noopener">Cosmos Intelligence</a>
+      <a href="https://www.youtube.com/@flolabsinnovation" target="_blank" rel="noopener">Connecting the Dots</a>
+      <a href="https://www.flomadtravel.com/" target="_blank" rel="noopener">Flo Travel</a>
+      <a href="https://www.flobrain.ai/" target="_blank" rel="noopener">FloBrain</a>
+      <a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener">FloLabs Innovations Group</a>
+      <a href="https://www.flolabs.international/" target="_blank" rel="noopener">FloLabs International</a>
+      <a href="https://www.flostudios.ai/" target="_blank" rel="noopener">FloStudios</a>
+      <a href="https://hephaestus.international/" target="_blank" rel="noopener">Hepheastus International</a>
+      <a href="https://www.bootcampuniversity.org/" target="_blank" rel="noopener">Innovation Bootcamp University</a>
+      <a href="https://www.moodchanger.ai/" target="_blank" rel="noopener">MoodChanger</a>
+      <a href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener">Legal &amp; Ethics Ventures Institute</a>
+      <a href="https://www.robocollective.ai/" target="_blank" rel="noopener">RoboCollective</a>
+      <a href="https://www.spaceventuresinstitute.com/" target="_blank" rel="noopener">Space Ventures Institute</a>
+      <a href="https://tarrl.org/" target="_blank" rel="noopener">TARRL</a>
+    </nav>
+
+    <nav class="mcf-col" aria-label="Company">
+      <h4 class="mcf-h">Company</h4>
+      <a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener">Careers</a>
+      <a href="https://www.flolabsinnovations.com/" target="_blank" rel="noopener">Contact Us</a>
+      <a href="https://flolabsrd.notion.site/merch-background" target="_blank" rel="noopener">Merch</a>
+    </nav>
+  </div>
+  <div class="mcf-bar">Live Long and Prosper</div>
+</footer>
+</div>
+
+<a class="to-top" href="#top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Top</a>
+
+<script src="athletes.js"></script>
+<script src="wearables.js"></script>
+</body>
+</html>
