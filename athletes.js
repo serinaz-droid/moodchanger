@@ -164,27 +164,41 @@
     (function loop(){ check(); if (!seen && f++ < 240) requestAnimationFrame(loop); })();
   }
 
-  /* ---------- Hero + closing video autoplay nudge ---------- */
+  /* ---------- Video: eager hero, lazy below-the-fold ---------- */
+  function play(v){ if(!v) return; v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
   function initVideo() {
-    var vids = [].slice.call(document.querySelectorAll('.hero-video, .closing-video, .how-video'));
-    if (!vids.length) return;
-    function nudge() {
-      vids.forEach(function (v) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); });
+    // Above-the-fold hero videos: start immediately (poster paints for LCP).
+    var heroes = [].slice.call(document.querySelectorAll('.hero-video'));
+    heroes.forEach(function (v) { play(v); v.addEventListener('canplay', function(){ play(v); }, { once: true }); });
+    if (heroes.length) {
+      var kick = function(){ heroes.forEach(play); };
+      document.addEventListener('click', kick, { once: true });
+      document.addEventListener('touchstart', kick, { once: true });
     }
-    nudge();
-    vids.forEach(function (v) { v.addEventListener('canplay', nudge, { once: true }); });
-    document.addEventListener('click', nudge, { once: true });
-    document.addEventListener('touchstart', nudge, { once: true });
+    // Below-the-fold closing videos: preload="none" in markup, so nothing
+    // downloads until they near the viewport (huge initial-payload saving).
+    var lazies = [].slice.call(document.querySelectorAll('.closing-video'));
+    if (lazies.length && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (ents) {
+        ents.forEach(function (e) { if (e.isIntersecting) { play(e.target); io.unobserve(e.target); } });
+      }, { rootMargin: '500px 0px' });
+      lazies.forEach(function (v) { io.observe(v); });
+    } else { lazies.forEach(play); }
   }
 
-  /* ---------- How-it-works tabbed video ---------- */
+  /* ---------- How-it-works tabbed video (load only what is viewed) ---------- */
   function initHowTabs() {
     var tabs = [].slice.call(document.querySelectorAll('.how-tab'));
     var panels = [].slice.call(document.querySelectorAll('.how-panel'));
     if (!tabs.length || !panels.length) return;
+    function loadPanel(p) { if (p) play(p.querySelector('video')); }
     function activate(key) {
       tabs.forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-tab') === key); });
-      panels.forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-panel') === key); });
+      panels.forEach(function (p) {
+        var on = p.getAttribute('data-panel') === key;
+        p.classList.toggle('active', on);
+        if (on) loadPanel(p);
+      });
     }
     tabs.forEach(function (t) {
       t.addEventListener('click', function (e) {
@@ -192,6 +206,15 @@
         activate(t.getAttribute('data-tab'));
       });
     });
+    // Load the initially-active panel's video only when the module scrolls near.
+    var active = document.querySelector('.how-panel.active');
+    var screen = document.querySelector('.how-screen') || active;
+    if (active && screen && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (ents) {
+        ents.forEach(function (e) { if (e.isIntersecting) { loadPanel(active); io.disconnect(); } });
+      }, { rootMargin: '500px 0px' });
+      io.observe(screen);
+    } else { loadPanel(active); }
   }
 
   /* ---------- Theme toggle (light / dark, persisted) ---------- */

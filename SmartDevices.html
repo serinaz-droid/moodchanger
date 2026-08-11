@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="athletes.css">
+<link rel="preload" as="image" href="assets/sd-ai-insights.webp" fetchpriority="high">
 <link rel="stylesheet" href="wearables.css">
 </head>
 <body id="top" class="wear-body">
@@ -17,7 +18,7 @@
 
 <header class="site-header" data-header>
   <div class="header-row">
-    <a class="brand" href="Home.html" aria-label="MoodChanger home">
+    <a class="brand" href="Home.html" aria-label="MoodChanger.ai home">
       <img class="mark" src="assets/flomadlogo.svg" alt="">
       <span class="word">Mood<span class="a">Changer</span>.ai</span>
     </a>
@@ -74,6 +75,7 @@
 
       <div class="item"><a href="Athletes.html">Athletes</a></div>
       <div class="item"><a href="Pets.html">Pets</a></div>
+            <div class="item cta-item"><a class="nav-cta" href="mailto:hello@moodchanger.ai?subject=Request%20a%20demo">Request a demo</a></div>
       <div class="item theme-item">
         <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch to dark mode" aria-pressed="false">
           <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -88,40 +90,36 @@
   <section class="showcase" aria-label="Smart Devices showcase">
     <div class="show-track">
       <div class="show-slide active" data-w="ai-insights">
-        <div class="shot" style="background:#08141c url(assets/sd-ai-insights.jpg) center/cover no-repeat"></div>
+        <div class="shot" style="background:#08141c url(assets/sd-ai-insights.webp) center/cover no-repeat"></div>
         <div class="scrim"></div>
         <div class="show-content">
-          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;01 / 04</span></span>
           <h2 class="show-name">AI Health Insights</h2>
           <p class="show-intro">AI Health Insights analyze gut microbiome and metabolic data to generate AI-driven recommendations that improve digestion, reduce inflammation, and enhance overall well-being.</p>
           <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
       <div class="show-slide" data-w="smart-scale">
-        <div class="shot" style="background:#08141c url(assets/sd-smart-scale.jpg) center/cover no-repeat"></div>
+        <div class="shot" style="background:#08141c url(assets/sd-smart-scale.webp) center/cover no-repeat"></div>
         <div class="scrim"></div>
         <div class="show-content">
-          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;02 / 04</span></span>
           <h2 class="show-name">Smart Scale</h2>
           <p class="show-intro">Detailed insights into body composition, including fat percentage, muscle mass, and cardiovascular health. Help users monitor their health and track progress effortlessly.</p>
           <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
       <div class="show-slide" data-w="smart-bottle">
-        <div class="shot" style="background:#08141c url(assets/sd-smart-bottle.jpg) center/cover no-repeat"></div>
+        <div class="shot" style="background:#08141c url(assets/sd-smart-bottle.webp) center/cover no-repeat"></div>
         <div class="scrim"></div>
         <div class="show-content">
-          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;03 / 04</span></span>
           <h2 class="show-name">Smart Bottle</h2>
           <p class="show-intro">Self-cleaning water bottle that uses UV-C technology to purify water and eliminate harmful bacteria. Its sleek, insulated design ensures drinks remain fresh and at the perfect temperature.</p>
           <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
       <div class="show-slide" data-w="smart-robots">
-        <div class="shot" style="background:#08141c url(img-sr-hero.jpg) center/cover no-repeat"></div>
+        <div class="shot" style="background:#08141c url(img-sr-hero.webp) center/cover no-repeat"></div>
         <div class="scrim"></div>
         <div class="show-content">
-          <span class="show-eyebrow">Smart Devices<span class="ix">&nbsp;·&nbsp;04 / 04</span></span>
           <h2 class="show-name">Smart Robots</h2>
           <p class="show-intro">Equipped with 3D LiDAR, depth cameras, and gyroscopes for navigation and task execution.</p>
           <span class="show-cta">View details<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -149,7 +147,7 @@
   <div class="wrap mcf-grid">
     <div class="mcf-brand">
       <div class="mcf-head">
-        <img class="mcf-logo" src="assets/flomadlogo.svg" alt="MoodChanger logo">
+        <img class="mcf-logo" src="assets/flomadlogo.svg" alt="MoodChanger.ai logo">
         <div class="mcf-title">
           <strong>MoodChanger.ai</strong>
           <span>| by FloLabs Innovations Group</span>
@@ -192,8 +190,8 @@
       <a href="https://www.flostudios.ai/" target="_blank" rel="noopener">FloStudios</a>
       <a href="https://hephaestus.international/" target="_blank" rel="noopener">Hepheastus International</a>
       <a href="https://www.bootcampuniversity.org/" target="_blank" rel="noopener">Innovation Bootcamp University</a>
-      <a href="https://www.moodchanger.ai/" target="_blank" rel="noopener">MoodChanger</a>
-      <a href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener">Legal &amp; Ethics Ventures Institute</a>
+      <a href="https://www.moodchanger.ai/" target="_blank" rel="noopener">MoodChanger.ai</a>
+      <a href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener">Legal and Ethics Ventures Institute</a>
       <a href="https://www.robocollective.ai/" target="_blank" rel="noopener">RoboCollective</a>
       <a href="https://www.spaceventuresinstitute.com/" target="_blank" rel="noopener">Space Ventures Institute</a>
       <a href="https://tarrl.org/" target="_blank" rel="noopener">TARRL</a>
@@ -214,7 +212,7 @@
   <div class="detail-bar">
     <div class="row">
       <button class="detail-close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>All smart devices</button>
-      <div class="detail-where"><span class="ix">01 / 4</span><span class="nm">AI Health Insights</span></div>
+      <div class="detail-where"><span class="nm">AI Health Insights</span></div>
       <div class="detail-arrows">
         <button class="dbtn prev" aria-label="Previous device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button class="dbtn next" aria-label="Next device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -224,7 +222,7 @@
   <div class="detail-stage">
       <article class="detail-panel active" data-w="ai-insights" data-name="AI Health Insights" data-screen-label="AI Health Insights">
         <div class="dp-hero">
-          <div class="shot" style="background:#08141c url(assets/sd-ai-insights.jpg) center/cover no-repeat"></div>
+          <div class="shot" style="background:#08141c url(assets/sd-ai-insights.webp) center/cover no-repeat"></div>
           <div class="scrim"></div>
           <div class="dp-headtext">
             <h2 class="dp-title">AI Health Insights</h2>
@@ -234,8 +232,8 @@
         <div class="dp-body">
           <div class="wear-mc">
             <div class="wear-mc-inner">
-              <h3 class="wear-mc-title">AI Health Insights <span class="plus">+ MoodChanger</span></h3>
-              <p class="wear-mc-body"><span class="caipo">CAIPO</span> turns these insights into personalized wellness plans that boost physical performance and energy levels. MoodChanger applies them to support emotional balance and stress reduction through the gut-brain connection.</p>
+              <h3 class="wear-mc-title">AI Health Insights <span class="plus">+ MoodChanger.ai</span></h3>
+              <p class="wear-mc-body"><span class="caipo">CAIPO</span> turns these insights into personalized wellness plans that boost physical performance and energy levels. MoodChanger.ai applies them to support emotional balance and stress reduction through the gut-brain connection.</p>
             </div>
           </div>
           <div class="wear-block">
@@ -247,7 +245,7 @@
             </div>
           </div>
           <div class="wear-block">
-            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="block-head"><span class="eyebrow">Features and Applications</span><span class="ln"></span></div>
             <div class="app-grid">
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Address inflammation and chronic disease risks.</p></div></article>
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Improve performance with gut health optimization.</p></div></article>
@@ -260,7 +258,7 @@
 
       <article class="detail-panel" data-w="smart-scale" data-name="Smart Scale" data-screen-label="Smart Scale">
         <div class="dp-hero">
-          <div class="shot" style="background:#08141c url(assets/sd-smart-scale.jpg) center/cover no-repeat"></div>
+          <div class="shot" style="background:#08141c url(assets/sd-smart-scale.webp) center/cover no-repeat"></div>
           <div class="scrim"></div>
           <div class="dp-headtext">
             <h2 class="dp-title">Smart Scale</h2>
@@ -270,8 +268,8 @@
         <div class="dp-body">
           <div class="wear-mc">
             <div class="wear-mc-inner">
-              <h3 class="wear-mc-title">Smart Scale <span class="plus">+ MoodChanger</span></h3>
-              <p class="wear-mc-body">With <span class="caipo">CAIPO</span>, personalized health recommendations encourage healthy habits and help users achieve fitness goals. MoodChanger uses Smart Scale data to boost confidence and motivation by visualizing progress and promoting a positive self-image.</p>
+              <h3 class="wear-mc-title">Smart Scale <span class="plus">+ MoodChanger.ai</span></h3>
+              <p class="wear-mc-body">With <span class="caipo">CAIPO</span>, personalized health recommendations encourage healthy habits and help users achieve fitness goals. MoodChanger.ai uses Smart Scale data to boost confidence and motivation by visualizing progress and promoting a positive self-image.</p>
             </div>
           </div>
           <div class="wear-block">
@@ -283,7 +281,7 @@
             </div>
           </div>
           <div class="wear-block">
-            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="block-head"><span class="eyebrow">Features and Applications</span><span class="ln"></span></div>
             <div class="app-grid">
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Monitor weight trends and cardiovascular health.</p></div></article>
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Track body composition for performance improvements.</p></div></article>
@@ -296,7 +294,7 @@
 
       <article class="detail-panel" data-w="smart-bottle" data-name="Smart Bottle" data-screen-label="Smart Bottle">
         <div class="dp-hero">
-          <div class="shot" style="background:#08141c url(assets/sd-smart-bottle.jpg) center/cover no-repeat"></div>
+          <div class="shot" style="background:#08141c url(assets/sd-smart-bottle.webp) center/cover no-repeat"></div>
           <div class="scrim"></div>
           <div class="dp-headtext">
             <h2 class="dp-title">Smart Bottle</h2>
@@ -306,8 +304,8 @@
         <div class="dp-body">
           <div class="wear-mc">
             <div class="wear-mc-inner">
-              <h3 class="wear-mc-title">Smart Bottle <span class="plus">+ MoodChanger</span></h3>
-              <p class="wear-mc-body">Integrated with <span class="caipo">CAIPO</span>, it tracks hydration levels and notifies users to drink regularly, supporting cognitive and physical performance. MoodChanger uses the smart bottle to support proper hydration, helping to reduce stress and improve mood.</p>
+              <h3 class="wear-mc-title">Smart Bottle <span class="plus">+ MoodChanger.ai</span></h3>
+              <p class="wear-mc-body">Integrated with <span class="caipo">CAIPO</span>, it tracks hydration levels and notifies users to drink regularly, supporting cognitive and physical performance. MoodChanger.ai uses the smart bottle to support proper hydration, helping to reduce stress and improve mood.</p>
             </div>
           </div>
           <div class="wear-block">
@@ -319,7 +317,7 @@
             </div>
           </div>
           <div class="wear-block">
-            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="block-head"><span class="eyebrow">Features and Applications</span><span class="ln"></span></div>
             <div class="app-grid">
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Support clean water intake.</p></div></article>
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Stay hydrated during workouts.</p></div></article>
@@ -332,7 +330,7 @@
 
       <article class="detail-panel" data-w="smart-robots" data-name="Smart Robots" data-screen-label="Smart Robots">
         <div class="dp-hero">
-          <div class="shot" style="background:#08141c url(img-sr-hero.jpg) center/cover no-repeat"></div>
+          <div class="shot" style="background:#08141c url(img-sr-hero.webp) center/cover no-repeat"></div>
           <div class="scrim"></div>
           <div class="dp-headtext">
             <h2 class="dp-title">Smart Robots</h2>
@@ -342,8 +340,8 @@
         <div class="dp-body">
           <div class="wear-mc">
             <div class="wear-mc-inner">
-              <h3 class="wear-mc-title">Smart Robots <span class="plus">+ MoodChanger</span></h3>
-              <p class="wear-mc-body">Integrated with <span class="caipo">CAIPO</span>, these robots automate repetitive tasks and enhance workflow efficiency. MoodChanger brings a human touch by enabling robots to assist with emotional engagement and stress reduction, making them valuable in therapeutic and interactive settings.</p>
+              <h3 class="wear-mc-title">Smart Robots <span class="plus">+ MoodChanger.ai</span></h3>
+              <p class="wear-mc-body">Integrated with <span class="caipo">CAIPO</span>, these robots automate repetitive tasks and enhance workflow efficiency. MoodChanger.ai brings a human touch by enabling robots to assist with emotional engagement and stress reduction, making them valuable in therapeutic and interactive settings.</p>
             </div>
           </div>
           <div class="wear-block">
@@ -355,7 +353,7 @@
             </div>
           </div>
           <div class="wear-block">
-            <div class="block-head"><span class="eyebrow">Features &amp; Applications</span><span class="ln"></span></div>
+            <div class="block-head"><span class="eyebrow">Features and Applications</span><span class="ln"></span></div>
             <div class="app-grid">
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.2l1.8 5 3.8-12 2.3 7H21"/></svg></span><div class="app-txt"><h4>Healthcare</h4><p>Enables research into biomechanics and prosthetic development with precise locomotion analysis.</p></div></article>
             <article class="app"><span class="app-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"/></svg></span><div class="app-txt"><h4>Sports</h4><p>Provides dynamic agility training and testing for robotic and human movement coordination.</p></div></article>
@@ -371,7 +369,7 @@
   <div class="wrap mcf-grid">
     <div class="mcf-brand">
       <div class="mcf-head">
-        <img class="mcf-logo" src="assets/flomadlogo.svg" alt="MoodChanger logo">
+        <img class="mcf-logo" src="assets/flomadlogo.svg" alt="MoodChanger.ai logo">
         <div class="mcf-title">
           <strong>MoodChanger.ai</strong>
           <span>| by FloLabs Innovations Group</span>
@@ -414,8 +412,8 @@
       <a href="https://www.flostudios.ai/" target="_blank" rel="noopener">FloStudios</a>
       <a href="https://hephaestus.international/" target="_blank" rel="noopener">Hepheastus International</a>
       <a href="https://www.bootcampuniversity.org/" target="_blank" rel="noopener">Innovation Bootcamp University</a>
-      <a href="https://www.moodchanger.ai/" target="_blank" rel="noopener">MoodChanger</a>
-      <a href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener">Legal &amp; Ethics Ventures Institute</a>
+      <a href="https://www.moodchanger.ai/" target="_blank" rel="noopener">MoodChanger.ai</a>
+      <a href="https://www.legalethicsventuresinstitute.com/" target="_blank" rel="noopener">Legal and Ethics Ventures Institute</a>
       <a href="https://www.robocollective.ai/" target="_blank" rel="noopener">RoboCollective</a>
       <a href="https://www.spaceventuresinstitute.com/" target="_blank" rel="noopener">Space Ventures Institute</a>
       <a href="https://tarrl.org/" target="_blank" rel="noopener">TARRL</a>

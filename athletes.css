@@ -34,6 +34,7 @@
   --chip-bg:#0a1a22;        /* high-contrast chip/pill */
   --chip-text:#ffffff;
   --accent-strong:#a07c00;  /* readable yellow for text on light bg */
+  --yellow-txt:#EAC81F;     /* yellow TEXT on light/grey-white surfaces */
   /* ---- legacy aliases routed to theme so existing vars flip ---- */
   --paper:var(--surface);
   --paper-2:var(--surface-2);
@@ -64,6 +65,7 @@
   --chip-bg:#16384a;
   --chip-text:#ffffff;
   --accent-strong:#FDE035;
+  --yellow-txt:#FDE035;
 }
 
 *{box-sizing:border-box}
@@ -92,7 +94,7 @@ ul{margin:0; padding:0; list-style:none}
 .on-dark .eyebrow, .eyebrow.light{color:var(--muted-d2)}
 
 /* ---------- theme toggle button ---------- */
-.theme-toggle{flex:none; width:42px; height:42px; border-radius:11px; display:grid; place-items:center; cursor:pointer;
+.theme-toggle{flex:none; width:42px; height:42px; border-radius:50%; display:grid; place-items:center; cursor:pointer;
   background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); color:#fff; transition:.3s var(--ease)}
 .theme-toggle:hover{background:rgba(255,255,255,.16); border-color:#fff}
 .theme-toggle svg{width:19px; height:19px}
@@ -252,7 +254,8 @@ section{position:relative}
 .statement .body .caipo{color:var(--caipo); font-weight:600}
 .signal{display:flex; align-items:flex-start; gap:14px; padding:22px 26px; border-radius:16px;
   background:var(--chip-bg); color:var(--chip-text); font-weight:500; font-size:clamp(1.02rem,1.5vw,1.22rem); line-height:1.5}
-.signal .ar{color:var(--yellow); font-weight:700; padding:0 .12em; font-size:1.1em; line-height:1}
+.signal .ar{color:inherit; font-weight:700; padding:0 .12em; font-size:1.1em; line-height:1}
+.ans{color:var(--yellow-txt); font-weight:700}
 .signal .pulse{flex:none; width:11px; height:11px; border-radius:50%; background:var(--yellow); margin-top:6px}
 
 /* ============================================================
@@ -281,11 +284,11 @@ section{position:relative}
 .feature .points li .ck{display:none !important}
 .feature .points li{padding-left:0; gap:0}
 .feature .copy{max-width:34rem}
-.feature .fnum{font-size:clamp(2.4rem,4vw,3.4rem); font-weight:800; letter-spacing:-.03em; color:var(--yellow-deep); line-height:1; display:block; margin-bottom:14px}
+.feature .fnum{font-size:clamp(2.4rem,4vw,3.4rem); font-weight:800; letter-spacing:-.03em; color:var(--yellow-txt); line-height:1; display:block; margin-bottom:14px}
 .feature .ficon{width:54px; height:54px; border-radius:14px; background:rgba(253,224,53,.14); border:1px solid rgba(253,224,53,.3);
   display:grid; place-items:center; margin:20px 0 22px; transition:transform .5s var(--ease)}
 .feature:hover .ficon{transform:translateY(-3px)}
-.feature .ficon svg{width:26px; height:26px; color:var(--yellow-deep)}
+.feature .ficon svg{width:26px; height:26px; color:var(--yellow-txt)}
 .feature h3{font-size:clamp(1.6rem,2.8vw,2.4rem); font-weight:500; letter-spacing:-.028em}
 .feature .desc{margin-top:16px; font-size:1.08rem; color:var(--muted-l); line-height:1.65}
 .feature .points{margin-top:26px; display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line-l)}
@@ -320,7 +323,7 @@ section{position:relative}
   transform:scaleX(0); transform-origin:left; transition:transform .5s var(--ease)}
 .step:hover{transform:translateY(-6px); box-shadow:0 38px 64px -38px rgba(13,36,48,.32); border-color:var(--line-2)}
 .step:hover::before{transform:scaleX(1)}
-.step .n{display:block; font-size:clamp(2.2rem,3.4vw,3rem); font-weight:800; letter-spacing:-.03em; color:var(--yellow); line-height:1; margin-bottom:18px}
+.step .n{display:block; font-size:clamp(2.2rem,3.4vw,3rem); font-weight:800; letter-spacing:-.03em; color:var(--yellow-txt); line-height:1; margin-bottom:18px}
 .step h4{font-size:clamp(1.18rem,1.7vw,1.42rem); font-weight:700; letter-spacing:-.02em; color:var(--text)}
 .step p{margin-top:12px; color:var(--text-muted); font-size:1.02rem; line-height:1.6; max-width:none;
   max-height:none; opacity:1; overflow:visible}
@@ -366,6 +369,10 @@ section{position:relative}
   box-shadow:0 16px 36px -18px rgba(0,0,0,.45); opacity:0; transform:translateY(14px); transition:.5s var(--ease); pointer-events:none}
 .backhome.show,.to-top.show{opacity:1; transform:none; pointer-events:auto}
 .backhome:hover,.to-top:hover{border-color:var(--yellow); color:var(--yellow-deep)}
+/* shared header CTA pill */
+.nav .cta-item{margin-left:14px}
+.nav .cta-item > .nav-cta{display:inline-flex; align-items:center; padding:7px 15px; border-radius:999px; background:var(--yellow) !important; color:#0a1116 !important; font-weight:700; font-size:.92rem; transition:transform .3s var(--ease), box-shadow .3s var(--ease)}
+.nav .cta-item > .nav-cta:hover{transform:translateY(-1px); box-shadow:0 10px 22px -12px rgba(253,224,53,.7); background:var(--yellow) !important; color:#0a1116 !important}
 .backhome svg,.to-top svg{width:15px; height:15px}
 
 /* ============================================================

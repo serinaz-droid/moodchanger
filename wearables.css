@@ -95,7 +95,8 @@ body.wear-body{background:var(--ink)}
   font-size:.94rem; font-weight:600; color:var(--text); padding:9px 12px; border-radius:10px; transition:background .25s}
 .detail-close:hover{background:var(--surface-2)}
 .detail-close svg{width:18px; height:18px}
-.detail-where{display:flex; align-items:baseline; gap:12px; min-width:0}
+.detail-bar .row{position:relative}
+.detail-where{position:absolute; left:50%; transform:translateX(-50%); display:flex; align-items:baseline; gap:12px; min-width:0; justify-content:center; text-align:center}
 .detail-where .ix{font-size:.82rem; font-weight:700; letter-spacing:.12em; color:var(--yellow)}
 .detail-where .nm{font-size:1.04rem; font-weight:600; letter-spacing:-.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 .detail-arrows{display:flex; align-items:center; gap:10px}
@@ -132,7 +133,7 @@ body.wear-body{background:var(--ink)}
 .wear-mc .mc-grid{display:none}
 .wear-mc-inner{position:relative; z-index:1; max-width:none}
 .wear-mc-title{font-size:clamp(1.7rem,3.1vw,2.7rem); font-weight:600; letter-spacing:-.03em; line-height:1.04; color:var(--text)}
-.wear-mc-title .plus{color:var(--yellow)}
+.wear-mc-title .plus{color:var(--yellow-txt)}
 .wear-mc-body{margin-top:22px; font-size:clamp(1.1rem,1.5vw,1.34rem); line-height:1.6; color:var(--text-muted); font-weight:400}
 .wear-mc-body .caipo{color:var(--caipo); font-weight:600}
 .wear-tagline{margin-top:clamp(28px,3.4vw,40px); display:flex; align-items:center; gap:15px; width:100%;
@@ -140,7 +141,8 @@ body.wear-body{background:var(--ink)}
   background:var(--chip-bg); color:var(--chip-text); font-size:clamp(1.02rem,1.4vw,1.22rem); font-weight:600; line-height:1.4;
   box-shadow:0 26px 54px -36px rgba(13,36,48,.45)}
 .wear-tagline::before{content:""; flex:none; width:10px; height:10px; border-radius:50%; background:var(--yellow)}
-.wear-tagline .ar{color:var(--yellow); font-weight:700; padding:0 .3em; font-size:1.12em; line-height:1}
+.wear-tagline .ar{color:inherit; font-weight:700; padding:0 .3em; font-size:1.12em; line-height:1}
+.wear-tagline .ans{color:var(--yellow-txt); font-weight:700}
 
 /* section subtitles — bigger + bold */
 .wear-block{margin-top:clamp(52px,6vw,88px)}
@@ -149,18 +151,18 @@ body.wear-body{background:var(--ink)}
 .block-head .eyebrow::before{display:none}
 .block-head .ln{flex:1; height:1px; background:var(--line-l)}
 
-/* ---- Core Capabilities — no frames, divided by vertical lines ---- */
+/* ---- Core Capabilities — centered, larger icons, divided by vertical lines ---- */
 .cap-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:0}
 .cap{position:relative; background:none; border:0; border-radius:0; box-shadow:none;
-  padding:6px clamp(26px,3vw,44px)}
+  padding:6px clamp(26px,3vw,44px); text-align:center; display:flex; flex-direction:column; align-items:center}
 .cap:first-child{padding-left:0}
 .cap:last-child{padding-right:0}
 .cap + .cap{border-left:1px solid var(--line-l)}
 .cap::after{display:none}
 .cap:hover{transform:none; box-shadow:none}
-.cap .cap-mark{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; margin-bottom:20px;
-  background:rgba(253,224,53,.16); border:1px solid rgba(253,224,53,.34); color:var(--yellow-deep)}
-.cap .cap-mark svg{width:21px; height:21px}
+.cap .cap-mark{width:64px; height:64px; border-radius:18px; display:grid; place-items:center; margin:0 auto 22px;
+  background:rgba(253,224,53,.16); border:1px solid rgba(253,224,53,.34); color:var(--yellow-txt)}
+.cap .cap-mark svg{width:32px; height:32px}
 .cap h4{font-size:clamp(1.18rem,1.7vw,1.42rem); font-weight:700; letter-spacing:-.018em}
 .cap p{margin-top:10px; font-size:1.02rem; line-height:1.55; color:var(--muted-l)}
 
@@ -230,18 +232,18 @@ body.detail-open{overflow:hidden}
 [data-w="smart-posture-trainer"] .shot{
   background:#08141c center/cover no-repeat;
 }
-[data-w="smart-glasses"] .shot{background-image:url(assets/wear/smart-glasses.jpg)}
-[data-w="eeg-hardware"] .shot{background-image:url(assets/wear/eeg-hardware.jpg)}
-[data-w="smart-ring"] .shot{background-image:url(assets/wear/smart-ring.jpg)}
-[data-w="brain-monitor"] .shot{background-image:url(assets/wear/brain-monitor.jpg)}
-[data-w="smart-foot-pods"] .shot{background-image:url(assets/wear/smart-foot-pods.jpg)}
-[data-w="smart-insoles"] .shot{background-image:url(assets/wear/smart-insoles.jpg)}
-[data-w="smart-watch"] .shot{background-image:url(assets/wear/smart-watch.jpg)}
-[data-w="smart-suit"] .shot{background-image:url(assets/wear/smart-suit.jpg)}
-[data-w="exoskeleton"] .shot{background-image:url(assets/wear/exoskeleton.jpg)}
-[data-w="smart-gloves"] .shot{background-image:url(assets/wear/smart-gloves.jpg)}
-[data-w="smart-shirt"] .shot{background-image:url(assets/wear/smart-shirt.jpg)}
-[data-w="smart-posture-trainer"] .shot{background-image:url(assets/wear/smart-posture-trainer.jpg); background-color:#e8eaec}
+[data-w="smart-glasses"] .shot{background-image:url(assets/wear/smart-glasses.webp)}
+[data-w="eeg-hardware"] .shot{background-image:url(assets/wear/eeg-hardware.webp)}
+[data-w="smart-ring"] .shot{background-image:url(assets/wear/smart-ring.webp)}
+[data-w="brain-monitor"] .shot{background-image:url(assets/wear/brain-monitor.webp)}
+[data-w="smart-foot-pods"] .shot{background-image:url(assets/wear/smart-foot-pods.webp)}
+[data-w="smart-insoles"] .shot{background-image:url(assets/wear/smart-insoles.webp)}
+[data-w="smart-watch"] .shot{background-image:url(assets/wear/smart-watch.webp)}
+[data-w="smart-suit"] .shot{background-image:url(assets/wear/smart-suit.webp)}
+[data-w="exoskeleton"] .shot{background-image:url(assets/wear/exoskeleton.webp)}
+[data-w="smart-gloves"] .shot{background-image:url(assets/wear/smart-gloves.webp)}
+[data-w="smart-shirt"] .shot{background-image:url(assets/wear/smart-shirt.webp)}
+[data-w="smart-posture-trainer"] .shot{background-image:url(assets/wear/smart-posture-trainer.webp); background-color:#e8eaec}
 /* posture-trainer photo is on white — darken a touch more under the text via its scrim handled globally */
 [data-w="smart-glasses"] .shot > *,
 [data-w="eeg-hardware"] .shot > *,

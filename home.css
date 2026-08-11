@@ -9,7 +9,7 @@
   min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
   padding:clamp(120px,16vh,180px) 0 clamp(80px,10vh,120px)}
 .home-hero::after{content:""; position:absolute; inset:0; z-index:0;
-  background:url(assets/home-hero.jpg) center/cover no-repeat}
+  background:url(assets/home-hero.webp) center/cover no-repeat}
 .home-hero::before{content:""; position:absolute; inset:0; z-index:1;
   background:linear-gradient(180deg, rgba(8,16,22,.78) 0%, rgba(8,16,22,.62) 45%, rgba(8,16,22,.82) 100%)}
 .home-hero .inner, .home-hero .hero-cue{position:relative; z-index:2}
@@ -33,6 +33,10 @@
 .home-hero .sub .strong{color:#fff; font-weight:600}
 .home-hero .sub .caipo{color:var(--caipo); font-weight:600}
 .home-hero .hero-cue{margin-top:clamp(40px,6vh,72px); display:inline-flex; flex-direction:column; align-items:center; gap:12px}
+.home-hero .hero-cta{margin-top:clamp(30px,4.4vh,48px); display:inline-flex; align-items:center; justify-content:center;
+  padding:16px 34px; border-radius:999px; background:var(--yellow); color:#0a1116; font-weight:800; font-size:1.02rem;
+  letter-spacing:-.01em; box-shadow:0 14px 34px -14px rgba(253,224,53,.6); transition:transform .35s var(--ease), box-shadow .35s var(--ease)}
+.home-hero .hero-cta:hover{transform:translateY(-2px); box-shadow:0 20px 44px -14px rgba(253,224,53,.75)}
 .home-hero .hero-cue .txt{font-size:.72rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.55)}
 .home-hero .hero-cue .ln{width:1px; height:46px; background:linear-gradient(180deg, rgba(255,255,255,.5), transparent); position:relative; overflow:hidden}
 .home-hero .hero-cue .ln::after{content:""; position:absolute; left:0; top:-50%; width:100%; height:50%; background:var(--yellow); animation:cueDown 1.9s var(--ease) infinite}
@@ -139,12 +143,23 @@
 .how-tab.active::after{transform:scaleX(1)}
 .how-tab h3{font-size:clamp(1.3rem,2.1vw,1.75rem); font-weight:600; letter-spacing:-.02em; color:var(--text-dim); transition:color .4s}
 .how-tab.active h3{color:var(--text)}
-.how-tab p{margin-top:13px; color:var(--text-dim); font-size:1.04rem; line-height:1.6; transition:color .4s; max-width:42ch}
+.how-tab p{margin-top:13px; color:var(--text-dim); font-size:1.04rem; line-height:1.6; transition:color .4s; max-width:42ch; min-height:5.4em}
 .how-tab.active p{color:var(--text-muted)}
-.how-tab .explore{margin-top:20px; display:inline-flex; align-items:center; gap:9px; color:var(--yellow); font-weight:800; font-size:1rem; opacity:1; transition:gap .3s var(--ease)}(--ease)}
+.how-tab .explore{margin-top:76px; display:inline-flex; align-items:center; gap:8px; color:#0a1116; background:var(--yellow); font-weight:600; font-size:.94rem; opacity:.4; padding:10px 18px; border-radius:999px; transition:gap .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease), opacity .4s var(--ease)}
+.how-tab.active .explore{opacity:1}
+.how-tab .explore svg{stroke:#0a1116; width:16px; height:16px}
+.how-tab:hover .explore{transform:translateY(-2px); box-shadow:0 12px 26px -12px rgba(253,224,53,.7)}
 .how-tab.active .explore{opacity:1}
 .how-tab:hover .explore{gap:15px}
 .how-tab .explore svg{width:17px; height:17px}
+/* keep all three tabs' Explore buttons on one baseline */
+.how-tab{display:flex; flex-direction:column}
+.how-tab .explore{align-self:flex-start; margin-top:28px}
+.sol-inputs{margin-top:10px; font-size:.9rem; line-height:1.45; color:var(--text-dim); font-weight:600; letter-spacing:.01em}
+.sol-inputs::before{content:"Inputs: "; color:var(--yellow-txt); font-weight:700}
+.nav .cta-item{margin-left:14px}
+.nav .cta-item > .nav-cta{display:inline-flex; align-items:center; padding:7px 15px; border-radius:999px; background:var(--yellow) !important; color:#0a1116 !important; font-weight:700; font-size:.92rem; transition:transform .3s var(--ease), box-shadow .3s var(--ease)}
+.nav .cta-item > .nav-cta:hover{transform:translateY(-1px); box-shadow:0 10px 22px -12px rgba(253,224,53,.7); background:var(--yellow) !important; color:#0a1116 !important}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:1000px){

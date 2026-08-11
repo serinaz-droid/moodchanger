@@ -333,12 +333,12 @@
 /* ---- Flomad Smart Pet Devices: photo per device ---- */
 .dev-bg{background-size:cover; background-position:center}
 .dev-bg .dev-ph{display:none}
-.dev-bg[data-dev="collar"]{background-image:url(assets/pets/dev-collar.jpg); background-position:50% 18%}
-.dev-bg[data-dev="feeder"]{background-image:url(assets/pets/dev-feeder.jpg); background-position:50% 72%}
-.dev-bg[data-dev="water"]{background-image:url(assets/pets/dev-water.jpg)}
-.dev-bg[data-dev="litter"]{background-image:url(assets/pets/dev-litter.jpg)}
-.dev-bg[data-dev="calming"]{background-image:url(assets/pets/dev-calming.jpg)}
-.dev-bg[data-dev="robots"]{background-image:url(assets/pets/dev-robots.jpg)}
+.dev-bg[data-dev="collar"]{background-image:url(assets/pets/dev-collar.webp); background-position:50% 18%}
+.dev-bg[data-dev="feeder"]{background-image:url(assets/pets/dev-feeder.webp); background-position:50% 72%}
+.dev-bg[data-dev="water"]{background-image:url(assets/pets/dev-water.webp)}
+.dev-bg[data-dev="litter"]{background-image:url(assets/pets/dev-litter.webp)}
+.dev-bg[data-dev="calming"]{background-image:url(assets/pets/dev-calming.webp)}
+.dev-bg[data-dev="robots"]{background-image:url(assets/pets/dev-robots.webp)}
 
 /* ---- Understanding Your Pet's World: photo per carousel slide ---- */
 .feature-track .feature .media{background-size:cover; background-position:center}
@@ -347,19 +347,19 @@
   background:linear-gradient(180deg, rgba(8,20,28,.42) 0%, transparent 30%, transparent 55%, rgba(8,20,28,.6) 100%)}
 .feature-track .feature .media .grain,.feature-track .feature .media .vig{z-index:1}
 .feature-track .feature .media .idx,.feature-track .feature .media .tag{z-index:2}
-.feature-track .feature:nth-child(1) .media{background-image:url(assets/pets/world-behavior.jpg)}
-.feature-track .feature:nth-child(2) .media{background-image:url(assets/pets/world-environment.jpg)}
-.feature-track .feature:nth-child(3) .media{background-image:url(assets/pets/world-stress.jpg)}
-.feature-track .feature:nth-child(4) .media{background-image:url(assets/pets/world-health.jpg)}
+.feature-track .feature:nth-child(1) .media{background-image:url(assets/pets/world-behavior.webp)}
+.feature-track .feature:nth-child(2) .media{background-image:url(assets/pets/world-environment.webp)}
+.feature-track .feature:nth-child(3) .media{background-image:url(assets/pets/world-stress.webp)}
+.feature-track .feature:nth-child(4) .media{background-image:url(assets/pets/world-health.webp)}
 
 /* ---- Our Vision for Pet Wellness: photo per active item ---- */
 .vision-img{background-size:cover; background-position:center}
 .vision-img svg{display:none}
 .vision-img .vglow{background:linear-gradient(180deg, transparent 55%, rgba(8,20,28,.28) 100%)}
-.vision-img[data-i="0"]{background-image:url(assets/pets/vision-behavior.jpg)}
-.vision-img[data-i="1"]{background-image:url(assets/pets/vision-care.jpg)}
-.vision-img[data-i="2"]{background-image:url(assets/pets/vision-insights.jpg)}
-.vision-img[data-i="3"]{background-image:url(assets/pets/vision-thriving.jpg)}
+.vision-img[data-i="0"]{background-image:url(assets/pets/vision-behavior.webp)}
+.vision-img[data-i="1"]{background-image:url(assets/pets/vision-care.webp)}
+.vision-img[data-i="2"]{background-image:url(assets/pets/vision-insights.webp)}
+.vision-img[data-i="3"]{background-image:url(assets/pets/vision-thriving.webp)}
 
 /* ============================================================
    BACKGROUND VIDEOS — hero (dog) + privacy closing (cat)
